@@ -1,0 +1,239 @@
+\documentclass[12pt]{article}
+\usepackage{setspace}
+\usepackage{mathtools}
+\usepackage{nicefrac}
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{booktabs}
+\usepackage{lscape}
+\usepackage{hyperref}
+\usepackage[affil-it]{authblk}
+
+\title{Measuring Judicial Independence in the American States: A Latent Variable Approach}
+
+\author{\href{http://www.jeremyrjohnson.org/}{Jeremy R.\ Johnson}\\ \href{mailto:Jeremy.Johnson@psu.edu}{Jeremy.Johnson@psu.edu}}
+\affil{Pennsylvania State University}
+\date{\today}
+
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+\textit{Judicial independence and judicial accountability are commonly understood to exist in tension with one another, and nowhere is this tension more acutely felt than in U.S. state courts. Many scholars and professionals, among them the American Bar Association, believe that the judiciary should be entirely independent from any outside influence, be it electoral, executive, or legislative. A contrary view is that judges have become too independent, and need to be “reigned in” by those who can affect control over them, primarily through judicial elections. The core of this disagreement lies with differing understanding of what constitutes “independence” and “accountability.” Absent clear conceptualization and measurement of these concepts, much of the normative debate over judicial independence reduces to disagreement over terms. Scholars of judicial politics commonly recognize two types of judicial independence, de jure which describes the institutional arrangements and structures of courts and constitutions, and de facto which describes what actually happens in those institutions in practice.  Despite its manifest importance, there is not currently a comprehensive measure of de jure judicial independence in American or Comparative politics. In this paper I develop a measure of de jure judicial independence across jurisdictions. I use a latent-variable model to score states relative to their de jure judicial independence. This measure will be useful in future studies of judicial independence which focus on de facto judicial independence.}
+\end{abstract}
+
+
+\pagebreak\doublespacing
+\setcounter{page}{1}
+
+The American judicial system utilizes of a large variety of selection methods, term lengths, retention methods, and docket control procedures.  The fifty states, as well as the federal government, each administer their judiciary in a different way.  It is the stated position of the American Bar Association (ABA) that ``the escalating partisanship and corrosive effects of excessive money in judicial campaigns, coupled with changes in society at large and the courts themselves, have served to create an environment that places our system of justice, administered by independent and impartial judges, at risk'' \citep{ABA2003}.  This is in direct contrast with surveys that show that 75\% of Americans prefer elections over appointments for judges \citep{Shepherd2013}. Justice Paul E. Pfeifer of the Ohio Supreme Court characterizes running for election as: ``I never felt so much like a hooker down by the bus station in any race I've ever been in as I did in a judicial race.  Everyone interested in contributing has very specific interests'' \citep{Liptak2006}.  With this disparity between the practitioners of the law and the public at large, it is important to establish just how independent or accountable our institutions are designed to be.
+
+\section*{Theory}
+\subsection*{Defining Judicial Independence}
+The first challenge to answering that question is establishing a common definition of independence.  Lydia Brashear Tiede states that ``judicial independence can and should be defined as among other things the institutional arrangements designed to protect the judiciary from the executive and the public at large'' \citep{Tiede2006}.  Howard and Carey \citeyearpar{Howard2004} define judicial independence as ``the extent to which a court may adjudicate free from institutional controls, incentives, and impediments imposed or intimidated by force, money, or extralegal, corrupt methods by individuals or institutions outside the judiciary, whether within or outside government.''  Linzer and Staton \citeyearpar{Linzer2014} use a slightly different definition, stating that a judge is independent ``in so far as her decisions reflect her evaluation of the legal regard and in so far as those decisions are respected by government officials.''  
+
+These definitions, as well as others, contribute to the widely varying definition of judicial independence.  As Linzer and Staton note, one of the challenges in studying the latent variable of judicial independence is that researchers do not share a common conceptual definition of independence \citep{Linzer2014}.There is some common ground to these definitions however.  Most definitions of judicial independence agree that the judge should be free to make her own decisions without regard to pubic opinion, or ruling party positions.  They also agree that judges should not be intimidated by the public or the government towards a certain ruling.\footnote{As Rios-Figueroa and Staton note, parties and governments put pressure on judges during proceedings by filing \textit{amicus curiae} briefs and other methods, however, these are perfectly legal within the system \citep[4]{Rios2014}.}  How do judicial systems protect judges from these types of threats to their independence?  To answer this question we need to further break down the definition of judicial independence. 
+
+Judicial independence takes two forms: \textit{de jure} and \textit{de facto} \citep{Feld2003,Rios2014, Rosenberg1991}.  \textit{De facto} judicial independence reflects two concepts; a judge in independent when her decisions reflect her preferences, and recognizing ``that lacking financial or physical means of coercion, courts depend on the assistance of other political authorities to enforce their decisions'' \citep{Rios2014}. Can a judge with a set term of office reasonably expect to remain in office no matter which way they rule on a particular case? If the answer to that question is yes, the judge enjoys \textit{de facto} independence. 
+
+Rios-Figueroa and Staton \citeyearpar{Rios2014} define \textit{de jure} judicial independence as ``formal rules designed to insulate judges from undue pressure, either from outside the judiciary or within.''  These are the institutional protections that allow a judge to be independent from the executive, public, legislature, or superior courts.  Examples of these protections include selection and retention methods, term lengths, and docket control.
+
+Judicial independence is a latent concept, meaning that is cannot be measured directly \citep[203]{Treier2008}.  However, there exist indicators that allow us to measure \textit{de jure} judicial independence.  As Rios-Figueroa and Staton note, the indicators used to measure \textit{de jure} independence are easily observable, however, the latent variable of independence is what is challenging to measure \citep[5]{Rios2014}.  The indicators that I will address here are selection method, retention method, initial term length, subsequent term length, and the amount of control over its docket that a court exercises.  Using these indicators, I create a measure of \textit{de jure} judicial independence for the American states from 1800 through 2012.
+
+The study of judicial independence is not a new concept, it has been examined for many years.  However, owing to the latency of the concept, it has proven routinely difficult to measure.  However the innovation of new statistical methods has made attempting to quantify the concept easier.  The difficult in lies in identifying indicators that can assist us in the measurement.  To date there are no studies that focus exclusively on the American states.  Many of the existing studies share a common theme in the indicators that they use to determine \textit{de jure} judicial independence.  For example, Melton and Ginsburg's \citeyearpar{Melton2014} study prominently feature selection and removal procedures in their study.  Both Melton and Ginsburg \citeyearpar{Melton2014} as well as Feld and Voigt \citeyearpar{Feld2003}, as well as many studies of \textit{de facto} independence also use term length \citep{Laporta2004, Feld2003, Cingranelli2008, Apodaca2004}. 
+
+\subsection*{Previous Studies} 
+Many scholars agree that an independent judiciary is necessary for the protection of both human rights and political rights \citep{Keith2002a,Keith2002b,Howard2004,Russell2001}.\footnote{For a more extensive review of judicial independence in human rights literature see \citep[Footnote 1]{Keith2002b}.}  With the necessity of judicial independence not in question, we are forced to ask how judicial independence can be ensured.  When examining human rights, judicial independence has often been an important concept; some form of judicial independence is incorporated in the U.S. State Department's Human Rights Scores as well as multiple variables in the POLITY IV dataset \citep{Cingranelli2008, Polity,Howard2004}.
+
+Schmidhauser develops an eleven part framework for a legal system based on neo-Weberian concepts \citep{Schmidhauser1987}.  Some of the components of this framework are: the concept that judicial institutions are based upon constitutional rather than ordinary statutory authority,  judges that are constitutionally protected with life tenure, and full establishment and acceptance of judicial review \cite[46-47]{Schmidhauser1987}.  The American states have accepted some of these concepts but clearly not all.  The American states are a mix of selection methods and tenure.
+
+Rios-Figueroa and Staton examine three distinct measures of \textit{de jure} judicial independence \citep{Rios2014}.  Rios-Figueroa and Staton examine three measures of \textit{de jure} judicial independence: Feld and Voigt \citeyearpar{Feld2003}, Keith \citeyearpar{Keith2002a} study and La Porta et al.\ \citeyearpar{Laporta2004}.  They also evaluate Apodaca's \citeyearpar{Apodaca2004} study.  Each of these studies develop a measure of \textit{de jure} judicial independence using different indicators and different methodologies.
+
+As Rios-Figueroa and Staton note, there are some issues with the validity in each of these measures.  One main concern is that some of these measures are not directly related to independence.  The second concern is that in Rios-Figueroa and Staton's study many of the \textit{de jure} as well as many of the \textit{de facto} use indicators that capture both \textit{de jure} and \textit{de facto} independence.  \citet*{Laporta2004} attempt to measure \textit{de facto} independence by using \textit{de jure} independence as a proxy.  However, this is complicated by the fact that even though the institutional arrangements that derive \textit{de jure} independence are observable, \textit{de jure} independence itself is still a latent concept. 
+
+\citet*{Melton2014} create an additive index that uses six aspects of judicial independence.  This model as well as that of \citet*{Voigt2007} and \citet*{Keith2002b} use an additive index.  \citet*{Linzer2014} show that a Bayesian IRT model can be more informative.
+
+\citet*{Linzer2014} create a measurement model that models exclusively \textit{de facto} judicial independence.  The measurement model created below is a divergent yet complimentary addition to that created by Linzer and Staton.  This model focuses exclusively on \textit{de jure} judicial independence, but uses a similar statistical model to that of Linzer and Staton.  
+
+\citet*{Choi2010} develop a theoretical model of judicial independence in the form of a principal-agent relationship.  One of the key concepts of independence in this relationship is the identity of the principal.  In this case, the court as a whole but also individual judges act as the agent, and the appointing authority acts as the principal.  As \citeauthor{Choi2010} note, Independence hinges on who is responsible for the initial appointment but also on who holds the power of reappointment.  As the number of principals increases, so does the amount of those who must be satisfied in order for the judge to maintain their position.  This principal-agent relationship is the basis for many of the assumptions in this model.
+
+\subsection*{Indicators}
+\subsubsection*{Selection Method}
+The method of judicial selection is probably the most important variable in determining judicial independence. There are five primary selection methods in use in the United States: executive appointment, legislative appointment, merit selection, non-partisan election, and partisan election. Some states use a mix of these methods such as Michigan and Ohio which use partisan primaries and non-partisan elections.\footnote{Following normal practice in this field, these states are coded as non-partisan \citep{Canes-Wrone2012, Caldarone2009}, however Tiede \citeyearpar{Tiede2006} does the opposite and codes them as partisan states. Nelson, Caufield, and Martin \citeyearpar{Nelson2013} discuss this coding decision at length.  In accordance with recommendations made in their article, this model will be conducted both ways and examined for differences, with theoretical justifications for both methods made clear.  }  Melinda Gann Hall \citeyearpar{Hall2007} defines two premises of judicial accountability. The first is the simple idea that citizens have accountable control over judges through the ballot box, and the second is the ``willingness of challengers to enter the electoral arena and the propensity of the electorate not to give their full support to incumbents'' \citep{Hall2007}.  Under this theory, I consider executive and legislative appointments to be the most independent/least accountable of the selection methods.  For the majority of states, executive appointment was the original method of appointment.  
+
+In all executive and legislative appointment states, the Governor is the final appointing authority.  In all executive and legislative appointment states, judges require a confirmation vote of one or both houses of the state legislature. 
+
+The second type of selection system is the Commission System or “merit selection.” The commission system plan came about with the adoption of the Missouri Nonpartisan Court Plan in 1940 \citep{Watson1969}. This system was created with the goal of removing partisanship in judicial selection. This system created a judicial nominating commission who reviews applications and interviews candidates judicial posts. The commission consists of three lawyers selected by the Missouri Bar Association, and three citizens selected by the governor as well as the Chief Justice of the Missouri Supreme Court who serves as the chair of the commission. When a vacancy exists in the courts, the commission submits three names to the Governor who then selects one nominee which is confirmed by the State Senate. Once the judge has completed at least one year in office they stand for retention election. Retention elections are on separate ballots and only ask the voter to vote whether the judge should be retained. This description of the Missouri Plan is representative of the other twenty states which use similar systems.  There is no partisan affiliation listed on the ballot \citep{Watson1969}.  The most substantive difference between commission systems and other systems is the attempt to remove partisanship completely. Appointment, as well as partisan elections, are both acknowledged to be partisan acts, while proponents of commission systems and non-partisan elections claim that these systems eliminate partisanship from judicial selection. 
+
+There are two types of electoral selection: partisan and non-partisan.  Electoral systems are considered to be the least independent due to the number of actors involved in the selection process \citep{Choi2010}. These judges are also generally forced to raise money for advertising and other campaign related expenses.  Debate exists about the ethical implications of raising this money from businesses, interest groups, and litigators that may appear before these judges.\footnote{For empirical evidence of this see \citep{Gibson2008}.}  Elected judges are selected by the electorate in statewide elections.  Calderone, et al. puts forth the view that when electing judges, the public will elect the judges that most closely match their own personal preferences \citep{Caldarone2009}.  However Debow, et al. \citeyearpar{Debow2013} states that ``non-partisan judicial elections do not compare favorably with partisan judicial elections'' because the former inhibit the voters ability to make informed decisions.
+
+\subsubsection*{Retention Method}
+Creation of retention elections were a hallmark of the merit selection plan created in Missouri. Retention elections differ from partisan and non-partisan elections in that there is only one candidate involved in the election. As Tracial V. Reid summarizes: \begin{quote}Judicial retention elections are intended to preserve the court’s role as an impartial and detached resolver of disputes by ensuring that judges can retain their seats without engaging in the fund raising, politicking, and electioneering that characterize political elections and the political process \citep{Reid1999}.\end{quote}  Retention elections simply ask voters to approve or disapprove of the judge in office. Ballots questions usually appear in the form of: ``Shall each of the persons listed be retained in office as Judge of the Appellate Court, First Judicial District?''
+
+All but the four states which have life or quasi-life terms employ some manner of retention elections. Some states use retention elections such as those listed above. Others use the same type of partisan or non-partisan election as they use for their initial selection. No state uses a commission system then requires the judge to run in a contested election. Also no states utilizes a partisan election for initial selection and then uses non-partisan elections for retention.  Contested elections, whether partisan or non-partisan, are considered to be the least independent \citep{Choi2010,ABA2003,Canes-Wrone2012}. Judges who do not face any electoral accountability are considered the most independent in this context.
+
+Retention elections are admittedly only a matter of degrees more or less independent than contested elections. There is still some debate on whether retention elections create a more independent judiciary. The ABA defends its position that retention elections are more independent and recommends them for all states that utilize elections to retain judges \citep{ABA2003}.  Canes-Wrone, Clark, and Park take a divergent position and posit that judges are susceptible to losing their seats based on only one or two salient decisions and also susceptible to attacks from single-issue groups \citep{Canes-Wrone2012}.  This occurred in 2010 when three justices on the Iowa Supreme Court were ousted. These justices had voted to strike down Iowa’s ban on same-sex marriage. There was a prolonged campaign by single-issue groups opposed to same-sex marriage resulting in the judges removal \citep{Iowa2010}.
+
+\subsubsection*{Term Lengths}
+The length of a judicial term is another important factor in determining the level of judicial independence.  In many commission system states seats are vacated by either promotion, retirement, or death. Replacement judges are then appointed to fill out the unexpired terms. The initial term lengths for the new judges in those states range from appointment until the next general election, or from appointment through the remainder of the full term. The subsequent term length is the length of the terms after the initial term. For most elective states this is the same as the initial term length, and for retention states, this the length of a standard term. Term lengths for initial terms range from one year to fourteen years\footnote{While there are four states which have lifetime or quasi-lifetime (age limited terms) only New Jersey requires reappointment after an initial term.} while subsequent terms range from six years to lifetime terms.\footnote{Many states also have statutory term lengths also utilize a mandatory retirement age.}  These term lengths can be compared to U.S. House of Representatives terms which are two years, and U.S. Senate terms which are six years.  The longer that a term is, the more independent choices a judge can make before being held accountable prior to an election.  As Hall and others show, most of strategic voting of judges is done in the year prior to an election \citep{Hall1987,Hall1985,Brace2008,Canes-Wrone2012}.  
+
+There are several arguments for the inclusion of term length as an indicator of judicial independence. The ABA views the term length question as a matter of experience in that lawyers who are experienced and qualified will be reluctant to leave successful private practices if they are forced to return to the job market after only a few years \citep{ABA2003}.   The argument against longer terms is that longer terms provide less opportunity for accountability. The ABA recommends an actively enforced judicial discipline system, which will ensure accountability for systems that do not rely on re-selection stating that judges should only be removed for ``cause'' \citep{ABA2003}.\footnote{This is in reference to an ethical or criminal violation, rather than a punitive punishment as the result of an opinion.  The clearest example of this would be the Iowa case where judges were ousted based on an ideological view, rather than as a breach of ethics or the law.}  The low level of judicial turnover disputes this point of view. In 2012, only 6 of the judges on state supreme courts were not retained. For the years 1964-1998, there were 4,588 retention elections with only 52 judges being voted out of office \citep{Aspin2000}.  
+
+There are several arguments for a connection between longer term lengths and increased judicial independence as well as alternatives such as limiting judges to only a single term. A single term would obviate the need for reappointment or campaigning for their next term \citep{Carrington1998}.  Former Presiding Judge of the Texas Court of Criminal Appeals Morris Overstreet has stated ``if you don't have to go back and face the voters, you don't have to worry about how they're going to retaliate or if they're going to retaliate'' \citep{ABA2003}.  This has the drawback of returning judges to private practice, which may have an effect on their decisions made while on the bench.  No state currently has adopted this practice.
+
+Melinda Gann Hall's \citeyearpar{Hall1987} study of the Louisiana Supreme Court shows that when faced with electoral accountability, the judges have a tendency to avoid casting votes on unpopular issues. Hall concludes that this system ``does not present the opportunity for the unfettered exercise of individual preferences'' \citep[46]{Hall1987}.  Hall also concludes that justices who perceive themselves to have views inconsistent with public opinion,  and who desire to keep their jobs, may be hesitant to publish opinions which are against public opinion. Hall states that ``whether voters and opponents are cognizant of the justices’ behavior or not, certain justices seem to fear the prospect of electoral sanction and consequently alter their behavior'' \citep{Hall1987}.  While voters’ knowledge of justices' records is questionable, certainly the judges' actions are not.  As Hall shows, judges act as if voter's will have knowledge of their records and vote strategically to minimize the electoral losses they may suffer.
+
+\subsubsection*{Docket Control}
+The ability of a court to control its own docket is another important factor in examining \textit{de jure} independence.  Docket control comes in many forms, ranging from complete discretionary control, as in the case of the U.S. Supreme Court, which can grant or deny any appellate case that it wishes to hear with few exceptions, to states such as Wyoming which have no intermediate appellate courts, and therefore has very little control over its appellate docket. There are also many states which have mandatory appeals on certain subject matter or litigants, and discretionary appeals on other types of cases.  Typically, docket control is set through statues passed by the state legislature, similar to the appellate jurisdiction of the U.S. Supreme Court, although some states have their docket discretion set through the state constitution.\footnote{Death penalty cases are an exception to this general rule.  In many cases death penalty appeals must be heard by the Court of Last Resort for that state, and this reduces the court's discretion in these cases.  In the case of this analysis, this exception will be ignored.  For states which utilize complete discretionary docket control except for death penalty cases, they will be coded as having complete discretion.}
+
+The ability of a court to control its docket has multiple facets to it's effect on independence.  The first is that if a court has control over its docket, then the workload of the court can be reduced to only those cases that the court wishes to make a statement on, rather than hearing every case, including those on which there is already clear precedent \cite{Maltzman2000}.  Also, reduced workload enables a court to spend more time on those cases that it deems important.  While this may seem more related to efficiency than independence, the two are inter-connected in this case.  As Squire notes, the ability to pick and choose cases allows an appellate court to craft their decisions more carefully than a court which has no discretion \citep{Squire2008}.
+
+The second aspect of docket control on judicial independence stems directly from the first.  Not only can judges spend more time on cases under a discretionary docket, but they can pick and choose the cases that they want to issue an opinion on.  As Fontana notes, this can be very important to both the influence and the legitimacy of a court \citep{Fontana2011}.  Fontana notes that had the \textit{Brown v. Board of Education} decision been decided ten years earlier, it might not have had the effect that it had, due to a lack of support from the President, and antipathy from southern states, and their representatives in Congress.  This is supported by Rosenberg in light of the very extensive process to bring the country in to compliance with the Court's ruling in \textit{Brown} \citep{Rosenberg1991}.  Had this process happened earlier, there might have been no compliance, causing both extended oppression of African-Americans in the South, as well as a severe blow to the legitimacy of the Court.  Fontana refers to this as ``legitimacy timing'' \citep[627]{Fontana2011}.  
+
+Another important aspect of docket control is the effect that it has on a judge's voting preferences.  Whether following a strictly legal interpretation, or an ideological preferences, a key part of judicial independence is a judge's ability to vote her preferences.  Songer et al. note that when courts have discretionary control over their dockets, the judges are much more likely to follow the attitudinal model of voting preferences \citep{Songer2003}.  This would lead us to believe that discretionary control allows more freedom in the preferences that judges exercise in this case.   This is also supported by Melinda Gann Hall's study of the Louisiana Supreme Court.  Hall finds that in discretionary cases, there is a significant number of dissents, rather than in mandatory cases, which shows much more unanimous decisions \citep{Hall1985}.  There are several hypotheses for this outcome, chiefly that under mandatory review, there are many more ``easy'' cases.  That is cases which have a clear precedent and had no complex legal complications.  These cases could have been successfully disposed of by the lower courts, but were required to be heard by the state supreme court.   
+
+\section*{Methodology}
+\subsection*{Data}
+The model uses institutional data on the courts of last resort used by the 50 states in the United States.  There are 52 courts of last resort in the United States.\footnote{The court of last resort for the District of Columbia is the District of Columbia Court of Appeals.  As the District of Columbia is not a state and its courts fall under the federal system, it is omitted in this study.  The D.C. Superior Court is the trial court and refers all appeals to the D.C. Court of Appeals.  Its judges are appointed by the President and confirmed by the Senate to fifteen year terms.}  Each state has a court while Texas and Oklahoma have specialized courts for civil and criminal.  In this study these court systems will be examined together as they have identical institutional arrangements.  
+
+I create two models of \textit{de jure} judicial independence.  The first uses the five indicators discussed below.  This model comprises the 50 states from 1970-2012.  The second model uses four indicators, omitting docket control from 1800-2012.  The reason for the two different models is the lack of available data on docket control prior to 1970.  The states had a variety of control over their dockets from 1970 through the present.  However, between 1940 and 1970 the data is nearly non-existent due to a lack of reliable surveys of state court organizations.  The post-1970 data was provided by the Bureau of Justice Statistics (BJS) and the National Center for State Courts (NCSC) \citep{BJS1993,BJS1998,BJS2004}.  Prior to 1940, in addition to the data being non-existent, there was also much dispersion in the interpretation of docket control based on the individual states.  In many of these states, even if there was an ``appeal by right,'' some states interpreted this as mandatory jurisdiction, while others did not.  These discrepancies lead toward a more \textit{de facto} indicator than is being addressed in this paper.  With the standardized definitions used in the BJS and NCSC reports, it becomes useful to add this indicator in for a post-1970 model, but as shown below, the wider variance in selection/retention methods and term lengths, still make a study of a longer time span useful, despite the lack of jurisdictional control data.  
+
+\subsection*{Indicators}
+All of the indicators are ordinal variables with 0 representing the most independent moving towards least independent.  \texttt{APPT} is coded from 0-4, which is the appointment method that is used for a judge's initial appointment.  \texttt{TERM1} is coded from 0-3 and represents the length of the judge's initial term.  \texttt{TERM2} is coded in a similar manner as \texttt{TERM1} and represents the length of the judge's subsequent terms after their first retention or reappointment. 
+%-------------------------------------------------------------
+\begin{table}[!htb]\singlespacing\centering
+	\caption{\small List of Indicators}\label{Indicators}
+	  
+		\begin{tabular}{ccl}\hline
+			\textbf{Variable}	&		&	\textbf{Code}	\\\hline\hline
+			APPT	&		&	Appointment Method	\\
+			0	&	-	&	Gubernatorial Appointment	\\
+			1	&	-	&	Commission System	\\
+			2	&	-	&	Legislative Appointment	\\
+			3	&	-	&	Non-Partisan Election	\\
+			4	&	-	&	Partisan Election	\\\hline
+			TERM1	&		&	Initial Term Length	\\
+			0	&	-	&	Lifetime or Quasi-Lifetime Term\\
+			1	&	-	&	$\geq10$ Years	\\
+			2	&	-	&	7-9 Years	\\
+			3	&	-	&	4-6 Years	\\
+			4	&	-	&	1-3 Years	\\\hline
+			TERM2	&		&	Subsequent Term Length	\\
+			0	&	-	&	Lifetime Term	\\
+			1   &   -   &   $\geq10$ Years \\
+			2	&	-	&	7-9 Years	\\
+			3	&	-	&	4-6 Years	\\
+			4	&	-	&	1-3 Years	\\\hline
+			RETELE	&		&	Method of Retention	\\
+			0	&	-	&	No Retention Election	\\
+			1	&	-	&	Retention Election	\\
+			2	&	-	&	Contested Retention Election	\\\hline
+			DOCKET	&		&	Docket Control Discretion	\\
+			0	&	-	&	Complete Discretion	\\
+			1	&	-	&	Mixed Discretion	\\
+			2	&	-	&	Mandatory Docket	\\\hline
+		\end{tabular}
+
+\end{table}
+%--------------------------------------------------------------
+There is one major difference however, in that 0 represents those states in which the judge is initially appointed to a lifetime term\footnote{The only major time this is an issue is in New Jersey, in which judges are initially appointed to a seven year term and then reappointed to a lifetime term.  However, since New Jersey is represented with a seven year term initially, this is different than if they were initially appointed to a lifetime term and therefore their subsequent term is greater than ten years.}.  In many states, these two terms are identical.  These differences are primarily in merit selection states which have one to three year terms followed by a retention election and then have longer terms after the first retention election.  Coding term lengths as ordinal rather than continuous, allows for consistent interpretation across the model.  \texttt{RETELE} is coded from 0-2 and indicates the method of retention.  0 indicates a simple reappointment procedure with no election.  1 represents an uncontested retention election, most common under the merit selection system, but also used in states that utilize partisan or non-partisan election systems.  2 indicates a contested retention election, either partisan or non-partisan.  \texttt{DOCKET} represents the amount of discretion that a court has over its docket.  0 is a completely discretionary docket, while 2 is no discretion.  A 1 indicates a mix of discretionary and mandatory appeals. Table \ref{Indicators} shows the coding for all levels of each indicator. 
+
+\subsection*{Model}
+I assume that the observed indicators for each state-year are functions of a unidimensional latent variable that represents the level of \textit{de jure} judicial independence.  For each state-year observation, let $i$ index the state and $t$ index the year.  or each model, there are $J$ indicators $J=1$,...,$J$ each of which is ordinal. My goal is to estimate each $\theta_{it}$, which is the latent level of \textbf{\textit{de jure} judicial independence} of each state $i$ in year $t$.
+
+Let $i=1$,...,$N$ index cross-sectional units and $t=1$,...,$T$ index time periods.  In each time, period, I observe values $y_{ij}$ for each of $j=1$,...,$J$ indicators for each unit.  Each indicator is ordinal in nature and can take on $K_j$ values.  The responses to each of the items depend on a single latent variable $\theta_{it}$, which may vary across units and over time. This model uses the same interpretation of error terms as do \citet[7]{Schnakenberg2014}.  Following their logic, since this data is collected from human coding of the relevant state constitutions and statues, there is an assumed perceptual error\footnote{Any errors in assumptions of coding are the responsibility of the author.  All inconsistencies between years and information have been cross-checked for validity with the relevant state constitutions and statues.  All aberrations in coding are listed in Appendix \ref{CodingNotes}.}.  
+
+Each level of the indicators has a ``item discrimination'' parameter.  This is noted as $\beta_j$ with each cut point as $(\alpha_{jk})^{k_j}_{k=1}$.  The error term is noted as $\epsilon_{itj}$.  As in \citet{Schnakenberg2014}, the likelihood for this model is dependent on the specification of the distribution for the error terms.  The assumption is that these are drawn independently from a logistic distribution.  The probability distribution for each possible response to item $j$ is given by:
+\begin{equation*}
+P[y_{itj}=k]=F(\alpha_{jk}-\theta_{it}\beta_j)-F(\alpha_{jk-1}-\theta_{it}\beta_j)
+\end{equation*} 
+  $F(\cdot)$ is the logistic cumulative distribution function.  Making the independence assumption (discussed below) the likelihood function for $\beta$, $\alpha$, and $\theta$ given the data is:
+  \begin{equation*}
+  \mathcal{L}(\beta,\alpha,\theta|y)=\prod_{N}^{i=1}\prod_{T}^{t=1}\prod_{J}^{j=1}[F(\alpha_{jy_{itj}}-\theta_{it}\beta_j)-F(\alpha_{jy_{itj}-1}-\theta_{it}\beta_j)].
+  \end{equation*}
+As \citet{Schnakenberg2014} note, this is equivalent to a standard independent ordinal logistic regression if $\theta$ was fully observed.  However since it is not, I estimate the latent data, item-discrimination parameters and the cut points.
+
+This model makes the assumption that observations are independent from year to year.  However, this is not an accurate assumption, as the individual year observations are highly dependent upon the previous year.  I.E. a state with a partisan election system in year $t$ is highly likely to use a partisan election system in year $t+1$. This is in contrast to many of the authoritarian regimes examined in other applications of this model such as \citet{Treier2008,Schnakenberg2014,Linzer2014}. The American states have rarely undergone any major regime changes of the types experienced in  other countries.  The most dramatic change in regimes is during the Reconstruction Era.  One would expect to see changes in judicial institutions in response to Reconstruction and post-Reconstruction.  The results of this expectation is mixed, with some states such as Virginia and Mississippi changing from long standing selection methods, while others such as Texas changed during Reconstruction and changed again in the post-Reconstruction Era.  Other states such as Tennessee did not alter their institutions at all during Reconstruction. As Linzer and Staton note, using the approach of a graded response model ``allows the latent variable to trend over time, but in a way that also reveals abrupt changes when they occur'' \citep[9]{Linzer2014}.
+
+Unlike \citet{Linzer2014} there is no missing data accounted for in this model.  Instead of specifying priors that can account for missing data, along with the nature of the missing data, I have broken the data into two different models.  The first with almost all state years but only four indicators, and the second with five indicators, but only comprising 1970-2012\footnote{In Connecticut, from 1784 through 1818, judges were appointed by the Legislature, but the tenure in office was dependent upon the action of the legislature.  These years are coded as missing and subsequently dropped from the dataset.}.
+
+\subsection*{Validation}
+\subsubsection*{Facial Validity}
+As shown with the evidence above, this measurement model uses indicators that have been shown through previous literature to indicate judicial independence.  In addition, these are all indicators that are institutional in nature, rather than measuring some concept that would measure both \textit{de facto} and \textit{de jure} independence.  Rather than measuring the amount of docket control that a court exercises, I examine the control that is constitutionally or statutorily authorized to the court.  
+
+\section*{Results}
+Model One has 8,346 state-year observations using four indicators of \textit{de jure} judicial independence.  Due to the lack of data, docket control is omitted from this model, but this model covers all state-years from 1800-2012.  Model One was sampled using through a GIBS sampler with 15,000 iterations using 4 MCMC chains.  Both models were implemented using Martyn Plummer’s JAGS software \citep{Plummer2014} in the R Statistical Software \citep{R-Core-Team2014}.  The first 10,000 iterations were discarded as burn-in.The conventional diagnostics all suggested convergence, including those of Geweke \citet{Geweke1991}, Heidelberger and Welch \citet{Heidelberger1981,Heidelberger1983}, Gelman and Rubin \citet{Gelman1992}.  The results from Model One are shown in Figure \ref{fig:AllState4Ind}.
+
+\begin{figure}[tbph]
+\centering
+\caption{Parameter Means for 4 Indicator Model}
+\label{fig:AllState4Ind}
+\includegraphics[width=0.7\linewidth]{"../../judgeslatent-repo/New Model Data/Analysis/AllState4Ind"}
+\end{figure}
+
+  Parameter Means for 4 Indicator Model
+Model Two has 2,150 state-year observations. This model contains all five indicators but for only the years 1970-2012.  This model suffers from a lack of variance in institutional arrangements, but this lack of variance is not significant.  This model was processed in the same manner as Model One.  The results of Model Two are shown in Figure .
+
+\begin{figure}[tbph]
+\centering
+\caption{Parameter Means for 5 Indicator Model}
+\label{fig:AllState5Ind}
+\includegraphics[width=0.7\linewidth]{"../../judgeslatent-repo/New Model Data/Analysis/AllState5Ind"}
+\end{figure}
+
+In addition to the trends shown over time in Figures \ref{fig:AllState4Ind} and \ref{fig:AllState5Ind}, Figure \ref{fig:TS5Ind} shows the ordered scores for a cross-section of 2012. The direct observation of these states show the facial validity of this model.  The states which are expected to exhibit \textit{de jure} independence using this model are shown to be more independent.  
+
+\begin{figure}[tbh]
+	\centering
+	\caption{Cross-Sectional Scores for 2012}
+	\label{fig:TS5Ind}
+	\includegraphics[width=0.7\linewidth]{"../../judgeslatent-repo/New Model Data/Analysis/TS5Ind"}
+\end{figure}
+
+Figure \ref{fig:TS5Ind} indicates that New Hampshire is the most independent state in the sample.  New Hampshire uses a merit selection system with an initial quasi-lifetime term.  Since judges in New Hampshire have quasi-lifetime terms, they are not subject to any retention method.  New Hampshire's Supreme Court also has complete discretionary jurisdiction over its appellate cases.  In contrast to New Hampshire, Alabama is considered to be the least independent state in the sample.  Alabama uses partisan election of judges, as well as partisan contested elections for retention of judges.  Alabama Supreme Court justices serve six year terms, and have a mandatory jurisdiction over its appellate cases.
+
+\section*{Conclusion} 
+This paper introduces both a new theory of \textit{de jure} judicial Independence as well as a new method by which scholars can measure the latent variable of judicial independence.  As stated above, the lack of issues with \textit{de facto} independence in the American states makes this a unique case for studying a \textit{de jure} measure.  This measure can now be applied to a cross-national study.  Judicial scholars have long debated how states and nations can be measured by their institutional arrangements.  Previously scholars have only been able to conduct case studies between states, or small numbers of states whereas this model allows for both time-series and cross-sectional studies of state institutional arrangements.
+
+\singlespacing
+\bibliographystyle{apsr}
+\bibliography{measurementbib}
+\appendix
+\section{Coding Notes}\label{CodingNotes}
+\begin{itemize}
+\item Arkansas- In 1868, the Chief Justice was appointed by the Governor, with Senate Consent, with the Associate Justices elected by the people.  This is coded as partisan election since the majority of the justices are elected.
+
+\item Connecticut- from 1784 through 1818 Judges were appointed by the Legislature, but the tenure in office was dependent upon the action of the legislature.  These years are coded as missing and subsequently dropped from the dataset.
+
+\item Delaware- The original court of last resort was the Court of Appeals, and the data is coded as such.  The Supreme Court was created by constitutional amendment in 1951, at which point the data is coded to reflect the Supreme Court.
+
+\item Michigan- In 1939, a constitutional amendment passed calling for non-partisan elections for judges, except the Supreme Court, which would continue to be nominated at party conventions.  This is coded as a non-partisan following practice in this field.
+
+\item New Jersey- AJS Data does not reflect the Constitutional amendment in 1983, which extended subsequent terms to a term of good behavior.
+
+\item New Mexico- Judges are elected for the remainder of the unexpired term.  This could be up to 8 years, so it was coded as such.
+
+\item Oklahoma is examined individually, but both courts have mandatory jurisdiction.-2004
+
+\item Pennsylvania- From 1874 to 1968 Supreme Court justices were elected to twenty-one year terms and were not eligible for reelection.  This is coded as a 0 for the subsequent term.
+
+\item Tennessee- Constitution says qualified electors, however, by executive order the governor has created a nominating commission
+
+\item Texas is examined individually, SC has discretionary jurisdiction, but COA has mandatory in sentencing issues, so this is coded as mixed.- 2004
+
+\item Retention Elections- Gubernatorial reappointment, judicial commission reappointment, legislative reappointment are coded as No Retention Elections.
+
+\item Docket Control- This is established by looking at Criminal and Civil cases.  Administrative agency decisions are omitted, as well as death penalty cases.
+
+\item Docket Control- Observations between BJS reports are assumed to be static.
+\end{itemize}
+\end{document}

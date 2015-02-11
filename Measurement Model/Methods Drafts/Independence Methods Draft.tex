@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\usepackage{setspace}
+\usepackage{mathtools}
+\usepackage{nicefrac}
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{lscape}
+\usepackage{hyperref}
+\usepackage[affil-it]{authblk}
+
+\title{Draft of Methods Section}
+
+\author{\href{http://www.jeremyrjohnson.org/}{Jeremy R.\ Johnson}\\ \href{mailto:Jeremy.Johnson@psu.edu}{Jeremy.Johnson@psu.edu}}
+\affil{Pennsylvania State University}
+\date{\today}
+
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\doublespacing
+\setcounter{page}{1}
+%\pagenumbering{gobble}  %This turns off page numbers  
+\subsection*{Model}
+I assume that the observed indicators for each state-year are functions of a unidimensional latent variable that represents the level of \textit{de jure} judicial independence.  For each state-year observation, let $i$ index the state and $t$ index the year.  or each model, there are $J$ indicators $J=1$,...,$J$ each of which is ordinal. My goal is to estimate each $\theta_{it}$, which is the latent level of \textit{de jure} judicial independence of each state $i$ in year $t$.
+
+Let $i=1$,...,$N$ index cross-sectional units and $t=1$,...,$T$ index time periods.  In each time, period, I observe values $y_{ij}$ for each of $j=1$,...,$J$ indicators for each unit.  Each indicator is ordinal in nature and can take on $K_j$ values.  The responses to each of the items depend on a single latent variable $\theta_{it}$, which may vary across units and over time. I assume that all indicators are independently draw from a logistic distribution.  
+\end{document}
