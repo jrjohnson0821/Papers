@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage{setspace}
+\usepackage{mathtools}
+\usepackage{nicefrac}
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{lscape}
+\usepackage{hyperref}
+\usepackage[affil-it]{authblk}
+\usepackage{color}
+
+%setup hyperlinks color
+\definecolor{PSU}{RGB}{0,0,153}
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=black,          % color of internal links (change box color with linkbordercolor)
+	citecolor=PSU,        % color of links to bibliography
+	filecolor=PSU,      % color of file links
+	urlcolor=PSU           % color of external links
+}
+
+\title{\textit{Is Panel Assignment Really Random: The Case of U.S. Court of Appeals} Summer Research Proposal}
+
+\author{\href{http://www.jeremyrjohnson.org/}{Jeremy R.\ Johnson}\\ \href{mailto:Jeremy.Johnson@psu.edu}{Jeremy.Johnson@psu.edu}}
+\affil{Pennsylvania State University}
+\date{\today}
+
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\pagebreak
+
+\singlespacing
+\setcounter{page}{1}
+\pagenumbering{gobble}  %This turns off page numbers  
+
+\section*{Introduction}
+The United States Courts of Appeals are broken in to eleven geographic circuits plus the D.C. Circuit and the Federal Circuit.  These courts' primary responsibility is to hear appeals from the 94 U.S. District Courts.  Traditionally these courts hear cases in panel of three judges.  In normal practice, panels are randomly chosen than a series of cases are randomly assigned to these panels \citep{Hooper2011, Journalist2011,Chilton2014,Songer2007}.\footnote{There are obvious exceptions to the random assignment such as judge availability, or conflicts of interest.}  These assignments are made to all current circuit judges and available senior judges.  There is variation from circuit to circuit on panel length and the number of cases that each panel hears before judges are assigned to a different panel as well as the number of judges on the circuit, however, the randomness is nominally standard across all circuit courts.  
+
+While this process is generally taken to be the normative procedure in the Federal Appellate courts, there has been literature that has challenged this as fact.  \citet{Chilton2014} performed Monte Carlo simulations and concluded that the observed partisan breakdown of panel assignments for a five year period could not have happened using random assignment.  \citet{Atkins1974} as well as \citet{Brown2000} examine ``panel packing'' during the 1960's.  In addition, \citet{Brown2000} examines modern practices qualitatively to determine if such practices could still go on today, determining that the court's have enough rule making discretion to do so.
+
+\citet{Chilton2014} have shown that the panel assignment process is not entirely random.  If it is not entirely random, what then can help us predict how panels are assigned?  The most likely hypotheses for answering these questions surrounds partisanship, both of the judges on the panel, as well as the chief judge, who exercises administrative control over the circuit.  As an extension of that administrative control, what role does the Circuit Executive and Circuit Clerk play in assignments?
+
+\section*{Data}
+This paper will create a dataset of U.S. Court of Appeals cases docketed for oral arguments during a certain time period, most likely 2008-2013.  The data for this project will come from the Songer Court of Appeals Database for the case data \citep{Songer2007}.  The data for the individual judge level variables will come from the U.S. Court of Appeals Judge Attribute Database \citep{Gryski2008}.  The Songer Dataset is a randomly drawn stratified sample of published Court of Appeals cases between 1925-2002, containing roughly 20,000 observations. A case salience measures are already coded into the Songer Dataset which reduces any additional coding, using the method developed by \citet{Hettinger2003}.
+
+\section*{Tasks to Be Performed / Timeline}
+
+
+\singlespacing
+\bibliographystyle{apsr}
+\bibliography{panelassbib}
+
+\end{document}
