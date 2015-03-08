@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+\usepackage{setspace}
+\usepackage{mathtools}
+\usepackage{nicefrac}
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{booktabs}
+\usepackage{lscape}
+\usepackage{hyperref}
+\usepackage[affil-it]{authblk}
+%setup hyperlinks color
+\usepackage{color}
+\definecolor{PSU}{RGB}{0,0,153}
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=black,          % color of internal links (change box color with linkbordercolor)
+	citecolor=PSU,        % color of links to bibliography
+	filecolor=PSU,      % color of file links
+	urlcolor=PSU           % color of external links
+}
+
+
+\title{Measuring Judicial Independence in the American States: A Latent Variable Approach}
+
+\author{\href{http://www.jeremyrjohnson.org/}{Jeremy R.\ Johnson}\\ \href{mailto:Jeremy.Johnson@psu.edu}{Jeremy.Johnson@psu.edu}}
+\affil{Pennsylvania State University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+	
+\begin{abstract}
+\textit{Judicial independence and judicial accountability are commonly understood to exist in tension with one another, and nowhere is this tension more acutely felt than in U.S. state courts. Many scholars and professionals, among them the American Bar Association, believe that the judiciary should be entirely independent from any outside influence, be it electoral, executive, or legislative. A contrary view is that judges have become too independent, and need to be “reigned in” by those who can affect control over them, primarily through judicial elections. The core of this disagreement lies with differing understanding of what constitutes “independence” and “accountability.” Absent clear conceptualization and measurement of these concepts, much of the normative debate over judicial independence reduces to disagreement over terms. Scholars of judicial politics commonly recognize two types of judicial independence, de jure which describes the institutional arrangements and structures of courts and constitutions, and de facto which describes what actually happens in those institutions in practice.  Despite its manifest importance, there is not currently a comprehensive measure of de jure judicial independence in American or Comparative politics. In this paper I develop a measure of de jure judicial independence across jurisdictions. I use a latent-variable model to score states relative to their de jure judicial independence. This measure will be useful in future studies of judicial independence which focus on de facto judicial independence.}
+\end{abstract}
+	
+	
+\pagebreak\doublespacing
+\setcounter{page}{1}
+
+\section*{Introduction}
+
+
+\
+
+
+
+\singlespacing
+\bibliographystyle{apsr}
+\bibliography{measurementbib}
+\appendix
+\section{Coding Notes}\label{CodingNotes}
+\begin{itemize}
+	\item Arkansas- In 1868, the Chief Justice was appointed by the Governor, with Senate Consent, with the Associate Justices elected by the people.  This is coded as partisan election since the majority of the justices are elected.
+	
+	\item Connecticut- from 1784 through 1818 Judges were appointed by the Legislature, but the tenure in office was dependent upon the action of the legislature.  These years are coded as missing and subsequently dropped from the dataset.
+	
+	\item Delaware- The original court of last resort was the Court of Appeals, and the data is coded as such.  The Supreme Court was created by constitutional amendment in 1951, at which point the data is coded to reflect the Supreme Court.
+	
+	\item Michigan- In 1939, a constitutional amendment passed calling for non-partisan elections for judges, except the Supreme Court, which would continue to be nominated at party conventions.  This is coded as a non-partisan following practice in this field.
+	
+	\item New Jersey- AJS Data does not reflect the Constitutional amendment in 1983, which extended subsequent terms to a term of good behavior.
+	
+	\item New Mexico- Judges are elected for the remainder of the unexpired term.  This could be up to 8 years, so it was coded as such.
+	
+	\item Oklahoma is examined individually, but both courts have mandatory jurisdiction.-2004
+	
+	\item Pennsylvania- From 1874 to 1968 Supreme Court justices were elected to twenty-one year terms and were not eligible for reelection.  This is coded as a 0 for the subsequent term.
+	
+	\item Tennessee- Constitution says qualified electors, however, by executive order the governor has created a nominating commission
+	
+	\item Texas is examined individually, SC has discretionary jurisdiction, but COA has mandatory in sentencing issues, so this is coded as mixed.- 2004
+	
+	\item Retention Elections- Gubernatorial reappointment, judicial commission reappointment, legislative reappointment are coded as No Retention Elections.
+	
+	\item Docket Control- This is established by looking at Criminal and Civil cases.  Administrative agency decisions are omitted, as well as death penalty cases.
+	
+	\item Docket Control- Observations between BJS reports are assumed to be static.
+\end{itemize}
+\end{document}

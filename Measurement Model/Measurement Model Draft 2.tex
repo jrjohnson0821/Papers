@@ -184,31 +184,31 @@ As shown with the evidence above, this measurement model uses indicators that ha
 \section*{Results}
 Model One has 8,346 state-year observations using four indicators of \textit{de jure} judicial independence.  Due to the lack of data, docket control is omitted from this model, but this model covers all state-years from 1800-2012.  Model One was sampled using through a GIBS sampler with 15,000 iterations using 4 MCMC chains.  Both models were implemented using Martyn Plummer’s JAGS software \citep{Plummer2014} in the R Statistical Software \citep{R-Core-Team2014}.  The first 10,000 iterations were discarded as burn-in.The conventional diagnostics all suggested convergence, including those of Geweke \citet{Geweke1991}, Heidelberger and Welch \citet{Heidelberger1981,Heidelberger1983}, Gelman and Rubin \citet{Gelman1992}.  The results from Model One are shown in Figure \ref{fig:AllState4Ind}.
 
-\begin{figure}[tbph]
-\centering
-\caption{Parameter Means for 4 Indicator Model}
-\label{fig:AllState4Ind}
+%\begin{figure}[tbph]
+%\centering
+%\caption{Parameter Means for 4 Indicator Model}
+%\label{fig:AllState4Ind}
 %\includegraphics[width=0.7\linewidth]{"../../judgeslatent-repo/New Model Data/Analysis/AllState4Ind"}
-\end{figure}
+%\end{figure}
 
   Parameter Means for 4 Indicator Model
 Model Two has 2,150 state-year observations. This model contains all five indicators but for only the years 1970-2012.  This model suffers from a lack of variance in institutional arrangements, but this lack of variance is not significant.  This model was processed in the same manner as Model One.  The results of Model Two are shown in Figure .
 
-\begin{figure}[tbph]
-\centering
-\caption{Parameter Means for 5 Indicator Model}
-\label{fig:AllState5Ind}
+%\begin{figure}[tbph]
+%\centering
+%\caption{Parameter Means for 5 Indicator Model}
+%\label{fig:AllState5Ind}
 %\includegraphics[width=0.7\linewidth]{"../../judgeslatent-repo/New Model Data/Analysis/AllState5Ind"}
-\end{figure}
+%\end{figure}
 
 In addition to the trends shown over time in Figures \ref{fig:AllState4Ind} and \ref{fig:AllState5Ind}, Figure \ref{fig:TS5Ind} shows the ordered scores for a cross-section of 2012. The direct observation of these states show the facial validity of this model.  The states which are expected to exhibit \textit{de jure} independence using this model are shown to be more independent.  
 
-\begin{figure}[tbh]
-	\centering
-	\caption{Cross-Sectional Scores for 2012}
-	\label{fig:TS5Ind}
+%\begin{figure}[tbh]
+%	\centering
+%	\caption{Cross-Sectional Scores for 2012}
+%	\label{fig:TS5Ind}
 %	\includegraphics[width=0.7\linewidth]{"../../judgeslatent-repo/New Model Data/Analysis/TS5Ind"}
-\end{figure}
+%\end{figure}
 
 Figure \ref{fig:TS5Ind} indicates that New Hampshire is the most independent state in the sample.  New Hampshire uses a merit selection system with an initial quasi-lifetime term.  Since judges in New Hampshire have quasi-lifetime terms, they are not subject to any retention method.  New Hampshire's Supreme Court also has complete discretionary jurisdiction over its appellate cases.  In contrast to New Hampshire, Alabama is considered to be the least independent state in the sample.  Alabama uses partisan election of judges, as well as partisan contested elections for retention of judges.  Alabama Supreme Court justices serve six year terms, and have a mandatory jurisdiction over its appellate cases.
 
