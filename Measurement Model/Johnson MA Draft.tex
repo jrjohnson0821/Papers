@@ -13,8 +13,12 @@
 \usepackage{booktabs}
 \usepackage{lscape}
 \usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{pdflscape}
 \usepackage[affil-it]{authblk}
 \usepackage{todonotes}
+\usepackage{caption, subcaption}
 %setup hyperlinks color
 \usepackage{color}
 \definecolor{PSU}{RGB}{0,0,153}
@@ -46,10 +50,14 @@
 \setcounter{page}{1}
 
 \section*{Introduction}
+As \citet[1]{Linzer2014} note, judicial independence is used as key covariate in many comparative studies such as studies of regime stability, economic growth, determining how judicial independence is fomented, and most prominently protection of human rights.  \citet{Keith2002b} draws the relationship between judicial independence and human rights protections quite clearly.  Despite the methodological differences that \citet{Rios2014} find in her measurement of judicial independence, Keith draws a clear line between judicial independence and protection of human rights. 
+
+As \citet[9]{Rios2006} notes, judicial independence can be a promoter of other societal benefits such as foreign investment and subsequent economic growth, and consolidation of democracy.   \citet{Hayo2007} discuss some of the important factors relating to \textit{de jure} judicial independence, which they refer to as formal independence.  First on that list is credibility of the government.  Governments must make credible commitments to an independent judiciary in order to assure its citizens that they will respect the constitutional rights that they are guaranteed.  Formal recognition of an independent judiciary is an important part of that credible commitment.   Credibility is a large component of the perceptional surveys that are conducted in research on corruption and human rights.
+
 
 \section*{Theory}
 \subsection*{Defining Judicial Independence}%Why the fuck do we Care
-The first challenge to answering that question is establishing a common definition of independence.  Lydia Brashear Tiede \citeyearpar[131]{Tiede2006} states that ``judicial independence can and should be defined as among other things the institutional arrangements designed to protect the judiciary from the executive and the public at large.''  Similar to Tiede's definition \citet[108]{McNollgast2006} define judicial independence ``as an outcome that emerges from strategic interactions among the judiciary, the legislature, and the executive.''  Howard and Carey \citeyearpar{Howard2004}\todo{Page Number} define judicial independence as ``the extent to which a court may adjudicate free from institutional controls, incentives, and impediments imposed or intimidated by force, money, or extralegal, corrupt methods by individuals or institutions outside the judiciary, whether within or outside government.''  Linzer and Staton \citeyearpar{Linzer2014} use a slightly different definition, stating that a judge is independent ``in so far as her decisions reflect her evaluation of the legal regard and in so far as those decisions are respected by government officials.''
+As with many latent concepts, there are widely varying definitions of judicial independence.  With these varying definitions come multiple attempts to measure it in various ways.  Lydia Brashear Tiede \citeyearpar[131]{Tiede2006} states that ``judicial independence can and should be defined as among other things the institutional arrangements designed to protect the judiciary from the executive and the public at large.''  Similar to Tiede's definition, \citet[108]{McNollgast2006} define judicial independence ``as an outcome that emerges from strategic interactions among the judiciary, the legislature, and the executive.''  Howard and Carey \citeyearpar[286]{Howard2004} define judicial independence as ``the extent to which a court may adjudicate free from institutional controls, incentives, and impediments imposed or intimidated by force, money, or extralegal, corrupt methods by individuals or institutions outside the judiciary, whether within or outside government.''  Linzer and Staton \citeyearpar{Linzer2014} use a slightly different definition, stating that a judge is independent ``in so far as her decisions reflect her evaluation of the legal regard and in so far as those decisions are respected by government officials.''
 
 \citet[6]{Rios2006} defines ``judicial independence as a relationship between those who delegate, in contemporary democracies the politicians that populate the elected branches of government, and the delegates or the judges in this case.''   While R\'{i}os-Figueroa's study was designed for a cross-national comparison, this definition is well suited for adaptation in the American context.  Rather than simply being the politicians in the elected branch of government, this includes delegation from the voters to the judges though direct elections.  \citet[17]{Rios2006} formalizes this association as follows: ``a relation between an actor ``A'' that delegates authority to an actor ``B'', where the latter is more or less independent of the former depending on how many controls A retains over B.''  In the American context this can be viewed as either the voters or the governor's control over retention of judges.  While voters and governors cannot directly control the decisions that a judge makes, they do exercise considerable power over the retention of judges.  
 
@@ -64,9 +72,60 @@ Judicial independence is a latent concept, meaning that is cannot be measured di
 The study of judicial independence is not a new concept, it has been examined for many years.  However, owing to the latency of the concept, it has proven routinely difficult to measure.  However the innovation of new statistical methods has made attempting to quantify the concept easier.  The difficult in lies in identifying indicators that can assist us in the measurement.  To date there are no studies that focus exclusively on the American states.  Many of the existing studies share a common theme in the indicators that they use to determine \textit{de jure} judicial independence.  For example, Melton and Ginsburg's \citeyearpar{Melton2014} study prominently feature selection and removal procedures in their study.  Both Melton and Ginsburg \citeyearpar{Melton2014} as well as Feld and Voigt \citeyearpar{Feld2003}, as well as many studies of \textit{de facto} independence also use term length \citep{Laporta2004, Feld2003, Cingranelli2008, Apodaca2004}. 
 
 \subsection*{Previous Studies}%Who's done it and why did their's suck
+\subsection*{Previous Studies} 
+Many scholars agree that an independent judiciary is necessary for the protection of both human rights and political rights \citep{Keith2002a,Keith2002b,Howard2004,Russell2001}.\footnote{For a more extensive review of judicial independence in human rights literature see \citep[Footnote 1]{Keith2002b}.}  With the necessity of judicial independence not in question, we are forced to ask how judicial independence can be ensured.  When examining human rights, judicial independence has often been an important concept; some form of judicial independence is incorporated in the U.S. State Department's Human Rights Scores as well as multiple variables in the POLITY IV dataset \citep{Cingranelli2008, Polity,Howard2004}.
+
+\citet{Schmidhauser1987} develops an eleven part framework for a legal system based on neo-Weberian concepts.  Some of the components of this framework are: the concept that judicial institutions are based upon constitutional rather than ordinary statutory authority,  judges that are constitutionally protected with life tenure, and full establishment and acceptance of judicial review \cite[46-47]{Schmidhauser1987}.  The American states have accepted some of these concepts but clearly not all.  The American states are a mix of selection methods and tenure.
+
+\citet{Rios2014} examine three distinct measures of \textit{de jure} judicial independence.  R\'{i}os-Figueroa and Staton examine three measures of \textit{de jure} judicial independence: Feld and Voigt \citeyearpar{Feld2003}, Keith \citeyearpar{Keith2002a} study and La Porta et al.\ \citeyearpar{Laporta2004}.  They also evaluate Apodaca's \citeyearpar{Apodaca2004} study.  Each of these studies develop a measure of \textit{de jure} judicial independence using different indicators and different methodologies.
 
 
+As \citet{Rios2014} note, there are some issues with the validity in each of these measures.  One main concern is that some of these measures are not directly related to independence.  The second concern is that in R\'{i}os-Figueroa and Staton's study many of the \textit{de jure} as well as many of the \textit{de facto} use indicators that capture both \textit{de jure} and \textit{de facto} independence.  \citet*{Laporta2004} attempt to measure \textit{de facto} independence by using \textit{de jure} independence as a proxy.  However, this is complicated by the fact that even though the institutional arrangements that derive \textit{de jure} independence are observable, \textit{de jure} independence itself is still a latent concept. 
 
+\citet*{Melton2014} create an additive index that uses six aspects of judicial independence.  This model as well as that of \citet*{Feld2003} and \citet*{Keith2002b} use an additive index.  Table \ref{Indicators} shows previous studies of \textit{de jure} judicial independence and the indicators that were used.   
+
+As \citet*{Linzer2014} show that a Bayesian IRT models can be more informative.   
+
+\newgeometry{bottom=.5in}
+\begin{landscape}
+\begin{table}[!tbh]\centering\caption{Comparision of Indicators of \textit{De Jure} Judicial Independence}\label{otherindicators}\small
+\begin{tabular}{rccccc}\hline
+Indicators	&	\citet{Feld2003}	&	\citet{Keith2002a}	&	\citet{Laporta2004}	&	\citet{Rios2006}	&	\citet{Melton2014}	\\\hline
+Anchored in the Constitution	&	X	&		&		&		&		\\
+Amendment Difficulty	&	X	&		&		&		&		\\
+Appointment Procedure	&	X	&		&	X	&	X	&	X	\\
+Tenure	&	X	&		&	X	&	X	&	X	\\
+Renewable Terms	&	X	&		&		&		&		\\
+Salary Insulation	&	X	&		&		&	X	&	X	\\
+Pay Comparison	&	X	&		&		&		&		\\
+Court Accessability	&	X	&		&		&		&		\\
+Case Allocation	&	X	&		&		&		&		\\
+Constitutional Interpretation	&	X	&		&	X	&	X	&		\\
+Published Decisions	&	X	&		&		&		&		\\
+Four Freedoms	&		&	X	&		&		&		\\
+Right to Strike	&		&	X	&		&		&		\\
+Writ of Habeas Corups	&		&	X	&		&		&		\\
+Public Trial	&		&	X	&		&		&		\\
+Fair Trial	&		&	X	&		&		&		\\
+Ban on Torture	&		&	X	&		&		&		\\
+Case Law	&		&		&	X	&		&		\\
+Legal Origin	&		&		&	X	&		&		\\
+Number of Courts	&		&		&		&	X	&		\\
+Number of Judges	&		&		&		&	X	&		\\
+Budget Control	&		&		&		&	X	&		\\
+Impeachement	&		&		&		&	X	&	X	\\
+Promotions	&		&		&		&	X	&		\\
+Transfers	&		&		&		&	X	&		\\
+Sanctions	&		&		&		&	X	&		\\
+Statement of Judicial Independence	&		&		&		&		&	X	\\\hline
+\end{tabular}
+\end{table}
+\end{landscape}
+\restoregeometry
+
+\citet*{Linzer2014} create a measurement model that models exclusively \textit{de facto} judicial independence.  The measurement model created below is a divergent yet complimentary addition to that created by Linzer and Staton.  This model focuses exclusively on \textit{de jure} judicial independence, but uses a similar statistical model to that of Linzer and Staton.  
+
+\citet*{Choi2010} develop a theoretical model of judicial independence in the form of a principal-agent relationship.  One of the key concepts of independence in this relationship is the identity of the principal.  In this case, the court as a whole but also individual judges act as the agent, and the appointing authority acts as the principal.  As \citeauthor{Choi2010} note, Independence hinges on who is responsible for the initial appointment but also on who holds the power of reappointment.  As the number of principals increases, so does the amount of those who must be satisfied in order for the judge to maintain their position.  This principal-agent relationship is the basis for many of the assumptions in this model.  \citet{Choi2010}'s choice of indicators for judicial independence is entirely \textit{de facto} however.  Their primary indicator for judicial independence is a ratio of the number of times that a judge writes an opinion that disagrees with their co-partisans.
 
 \subsection*{Indicators}
 \subsubsection*{Selection Method}
@@ -79,7 +138,7 @@ The second type of selection system is the Commission System or “merit selecti
 There are two types of electoral selection: partisan and non-partisan.  Electoral systems are considered to be the least independent due to the number of actors involved in the selection process \citep{Choi2010}. These judges are also generally forced to raise money for advertising and other campaign related expenses.  Debate exists about the ethical implications of raising this money from businesses, interest groups, and litigators that may appear before these judges.\footnote{For empirical evidence of this see \citep{Gibson2008}.}  Elected judges are selected by the electorate in statewide elections.  Calderone, et al. puts forth the view that when electing judges, the public will elect the judges that most closely match their own personal preferences \citep{Caldarone2009}.  However Debow, et al. \citeyearpar{Debow2013} states that ``non-partisan judicial elections do not compare favorably with partisan judicial elections'' because the former inhibit the voters ability to make informed decisions.
 
 \subsubsection*{Retention Method}
-Creation of retention elections were a hallmark of the merit selection plan created in Missouri. Retention elections differ from partisan and non-partisan elections in that there is only one candidate involved in the election. As Tracial V. Reid \todo{Cite this source with page numbers} summarizes: \begin{quote}Judicial retention elections are intended to preserve the court’s role as an impartial and detached resolver of disputes by ensuring that judges can retain their seats without engaging in the fund raising, politicking, and electioneering that characterize political elections and the political process \citep{Reid1999}.\end{quote}  Retention elections simply ask voters to approve or disapprove of the judge in office. Ballots questions usually appear in the form of: ``Shall each of the persons listed be retained in office as Judge of the Appellate Court, First Judicial District?''
+Creation of retention elections were a hallmark of the merit selection plan created in Missouri. Retention elections differ from partisan and non-partisan elections in that there is only one candidate involved in the election. As Tracial V. Reid summarizes: \begin{quote}Judicial retention elections are intended to preserve the court’s role as an impartial and detached resolver of disputes by ensuring that judges can retain their seats without engaging in the fund raising, politicking, and electioneering that characterize political elections and the political process \citep[68]{Reid1999}.\end{quote}  Retention elections simply ask voters to approve or disapprove of the judge in office. Ballots questions usually appear in the form of: ``Shall each of the persons listed be retained in office as Judge of the Appellate Court, First Judicial District?''
 
 All but the four states which have life or quasi-life terms employ some manner of retention elections. Some states use retention elections such as those listed above. Others use the same type of partisan or non-partisan election as they use for their initial selection. No state uses a commission system then requires the judge to run in a contested election. Also no states utilizes a partisan election for initial selection and then uses non-partisan elections for retention.  Contested elections, whether partisan or non-partisan, are considered to be the least independent \citep{Choi2010,ABA2003,Canes-Wrone2012}. Judges who do not face any electoral accountability are considered the most independent in this context.
 
@@ -116,7 +175,7 @@ I create two models of \textit{de jure} judicial independence.  The first uses t
 All of the indicators are ordinal variables with 0 representing the most independent moving towards least independent.  \texttt{APPT} is coded from 0-4, which is the appointment method that is used for a judge's initial appointment.  \texttt{TERM1} is coded from 0-3 and represents the length of the judge's initial term.  \texttt{TERM2} is coded in a similar manner as \texttt{TERM1} and represents the length of the judge's subsequent terms after their first retention or reappointment. 
 %-------------------------------------------------------------
 \begin{table}[!htb]\singlespacing\centering
-	\caption{\small List of Indicators}\label{Indicators}
+	\caption{List of Indicators}\label{Indicators}
 	
 	\begin{tabular}{ccl}\hline
 		\textbf{Variable}	&		&	\textbf{Code}	\\\hline\hline
