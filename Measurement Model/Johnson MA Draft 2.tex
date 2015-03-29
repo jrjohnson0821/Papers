@@ -19,6 +19,7 @@
 \usepackage[affil-it]{authblk}
 \usepackage{todonotes}
 \usepackage{caption, subcaption}
+\usepackage{subfiles}
 %setup hyperlinks color
 \usepackage{color}
 \definecolor{PSU}{RGB}{0,0,153}
@@ -221,11 +222,11 @@ All of the indicators are ordinal variables with 0 representing the most indepen
 %--------------------------------------------------------------
 There is one major difference however, in that 0 represents those states in which the judge is initially appointed to a lifetime term\footnote{The only major time this is an issue is in New Jersey, in which judges are initially appointed to a seven year term and then reappointed to a lifetime term.  However, since New Jersey is represented with a seven year term initially, this is different than if they were initially appointed to a lifetime term and therefore their subsequent term is greater than ten years.}.  In many states, these two terms are identical.  These differences are primarily in merit selection states which have one to three year terms followed by a retention election and then have longer terms after the first retention election.  Coding term lengths as ordinal rather than continuous, allows for consistent interpretation across the model.  \texttt{RETELE} is coded from 0-2 and indicates the method of retention.  0 indicates a simple reappointment procedure with no election.  1 represents an uncontested retention election, most common under the merit selection system, but also used in states that utilize partisan or non-partisan election systems.  2 indicates a contested retention election, either partisan or non-partisan.  \texttt{DOCKET} represents the amount of discretion that a court has over its docket.  0 is a completely discretionary docket, while 2 is no discretion.  A 1 indicates a mix of discretionary and mandatory appeals. Table \ref{Indicators} shows the coding for all levels of each indicator. 
 
-\section*{Model}
-
+%Model
+\subfile{methodsdraft.tex}
 
 \newpage\section*{Validation}
-\subsubsection*{Facial Validity}
+\subsection*{Facial Validity}
 As shown with the evidence above, this measurement model uses indicators that have been shown
 through previous literature to indicate judicial independence. In addition, these are all indicators
 that are institutional in nature, rather than measuring some concept that would measure both \textit{de
@@ -234,7 +235,8 @@ exercises, I examine the control that is constitutionally or statutorily authori
 
 
 \subsubsection*{Other Validity}\todo{Clearly Define This, \citet{Jackman2008}}
-\input{./sections//gmrep/gmrep.tex}
+%Ginsburg and Melton Replication
+\subfile{gmrep.tex}
 
 
 \section*{Application}
