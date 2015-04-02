@@ -12,11 +12,20 @@ There has been many definitions put forth for judicial independence.  ``Judicial
 As noted above, one of the challenges in studying the latent variable of judicial independence is that researchers do not share a common conceptual definition of independence \citep{Linzer2014}.  There is some common ground to these definitions however.  Most definitions of judicial independence agree that an independent judge should be free to make her own decisions without regard to pubic opinion, or ruling party positions.  They also agree that independent judges should not be intimidated by the public or the government as a consequence of any particular ruling.\footnote{As \citet[4]{Rios2014} note, parties and governments put pressure on judges during proceedings by filing \textit{amicus curiae} briefs and other methods, however, these are perfectly legal within the system.}  How do judicial systems protect judges from these types of threats to their independence?  To answer this question we need to further deconstruct the definition of judicial independence. 
 
 %Accountability vs. Independence
-``Judicial independence is merely the other side of the coin from judicial accountability, \citep{Burbank2008}.  Many of the institutional rules that remove independence serve the opposite function of creating accountability for judges.  Figure \ref{IndCon} illustrates how rather than being dichotomous or ordinal, independence and accountability can more properly be considered as a spectrum with total independence on one side and total accountability on the other.  \citet{Hall2007} defines two premises of judicial accountability. The first is the simple idea that citizens have accountable control over judges through the ballot box, and the second is the ``willingness of challengers to enter the electoral arena and the propensity of the electorate not to give their full support to incumbents'' \citep[166]{Hall2007}.
+\subsection*{The Judicial Independence Common Space}
+``Judicial independence is merely the other side of the coin from judicial accountability, \citep{Burbank2008}.  Many of the institutional rules that remove independence serve the opposite function of creating accountability for judges.  \citet{Hall2007} defines two premises of judicial accountability. The first is the simple idea that citizens have accountable control over judges through the ballot box, and the second is the ``willingness of challengers to enter the electoral arena and the propensity of the electorate not to give their full support to incumbents'' \citep[166]{Hall2007}.
 
-\todo{Add Continuum Here}%Add Big Fucking Picture of Continuum Here  
-\begin{figure}[tbh]\centering\caption{Independence Continuum}\label{IndCon}
-	content...
+Figure \ref{IndCon} illustrates how rather than being dichotomous or ordinal, independence and accountability can more properly be considered as a common space.  The Judicial Independence Common Space is a single dimension continuum comprising total accountability on one side with a totally accountable judiciary on one side with a totally independent judiciary on the other.  As a judicial institution moves across he indicators described below in Section \ref{Indicators}, it changes position on the Independence Common Space. 
+
+%Independence Continuum
+\begin{figure}[tb]\centering\caption{Judicial Independence Common Space}\label{IndCon}
+\begin{tikzpicture}
+% a straight line segment
+\draw[latex-latex] (-0.5,0) -- (9.5,0);
+%% the labels
+\node[fill=black,draw=black,circle,inner sep=2pt,label=above:{\scriptsize Independent}] at (9,0) {};
+\node[fill=black,draw=black,circle,inner sep=2pt,label=above:{\scriptsize Accountable}] at (0,0) {};
+\end{tikzpicture}
 \end{figure}
 
 Judicial independence takes two forms: \textit{de jure} and \textit{de facto} \citep{Feld2003,Rios2014, Rosenberg1991,Voeten2008}.  \textit{De facto} judicial independence reflects two concepts: first, a judge is independent when her decisions reflect her preferences, and second, even if a court is totally independent ``that lacking financial or physical means of coercion, courts depend on the assistance of other political authorities to enforce their decisions'' \citep[4]{Rios2014}. Can a judge with a set term of office reasonably expect to remain in office no matter which way they rule on a particular case? If the answer to that question is yes, the judge enjoys \textit{de facto} independence. 
@@ -35,9 +44,11 @@ summary scale. Finally, all were developed for the cross-national context. The l
 
 Table \ref{otherindicators} shows a comparison of previous studies of \textit{de jure} judicial independence.  \citet{Rios2014} examine three measures of \textit{de jure} judicial independence: \citet{Feld2003}, \citet{Keith2002a}, and \citet{Laporta2004}.  In addition, they evaluate \citet{Apodaca2004} study.  Each of these studies develop a measure of \textit{de jure} judicial independence using different indicators and different methodologies.  Table \ref{otherindicators} shows the commonality of some of these measures such as appointment/retention methods and term lengths.  It also shows the lack of congruence in indicators of \textit{de jure} judicial independence shown in previous studies.
 
+As \citet{Rios2014} note, there are some issues with the validity in each of these measures.  One main concern is that some of these measures are not directly related to independence.  Some of these measures are court accessibility, case allocation, right to strike, the four freedoms, pay comparisons, bans on torture, and legal origin \citep{Feld2003,Keith2002a,Laporta2004,Rios2014}.  The second concern is that in R\'{i}os-Figueroa and Staton's study many of the \textit{de jure} as well as many of the \textit{de facto} use indicators that capture both \textit{de jure} and \textit{de facto} independence.  \citealt{Laporta2004} attempt to measure \textit{de facto} independence by using \textit{de jure} independence as a proxy.  However, this is complicated by the fact that even though the institutional arrangements that derive \textit{de jure} independence are observable, \textit{de jure} independence itself is still a latent concept. 
+
 \newgeometry{bottom=.5in}
 \begin{landscape}
-	\begin{table}[!tbh]\centering\caption{Comparision of Indicators of \textit{De Jure} Judicial Independence}\label{otherindicators}\small
+	\begin{table}[tb]\centering\caption{Comparision of Indicators of \textit{De Jure} Judicial Independence}\label{otherindicators}\small
 		\begin{tabular}{rccccc}\hline
 			Indicators	&	\citet{Feld2003}	&	\citet{Keith2002a}	&	\citet{Laporta2004}	&	\citet{Rios2006}	&	\citet{Melton2014}	\\\hline
 			Anchored in the Constitution	&	X	&		&		&		&		\\
@@ -73,8 +84,6 @@ Table \ref{otherindicators} shows a comparison of previous studies of \textit{de
 \restoregeometry
 
 \doublespacing\normalsize
-As \citet{Rios2014} note, there are some issues with the validity in each of these measures.  One main concern is that some of these measures are not directly related to independence.  Some of these measures are court accessibility, case allocation, right to strike, the four freedoms, pay comparisons, bans on torture, and legal origin \citep{Feld2003,Keith2002a,Laporta2004,Rios2014}.  The second concern is that in R\'{i}os-Figueroa and Staton's study many of the \textit{de jure} as well as many of the \textit{de facto} use indicators that capture both \textit{de jure} and \textit{de facto} independence.  \citealt{Laporta2004} attempt to measure \textit{de facto} independence by using \textit{de jure} independence as a proxy.  However, this is complicated by the fact that even though the institutional arrangements that derive \textit{de jure} independence are observable, \textit{de jure} independence itself is still a latent concept. 
-
 \citet*{Melton2014} create an additive index that uses six aspects of judicial independence.  This model as well as that of \citet*{Feld2003} and \citet*{Keith2002b} use an additive index.  Table \ref{otherindicators} shows previous studies of \textit{de jure} judicial independence and the indicators that were used.  These previous studies show the wide variation in indicators used, as well as the most basic method of creating a measure.  Only two of these measures, appointment procedure and tenure, are used in more than three of the five studies shown.
 
 Many of the previous studies of latent variables were constructed using additive models.  The most widely cited use of this in comparative politics is POLITY IV \citep{Polity}.  This has also dominated the study of judicial independence.  Most if not all previous studies use additive indices \citep{Feld2003,Keith2002a,Laporta2004} and some still continue to do so today \citep{Melton2014}.  Following work in other areas more recent work has adopted an IRT approach \citep{Treier2008,Schnakenberg2014,Linzer2014,Fariss2014}.
