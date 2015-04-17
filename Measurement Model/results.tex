@@ -4,7 +4,7 @@
 
 I have specified two different models.  A primary specification with five indicators and 42 years of data and a regime change specification consisting of regime change observations over 200 years with four indicators.
 
-Each model was run in R using Martyn \citeauthor{r-rjags}'s JAGS package and the CODA package for convergence diagnostics \cite{R,r-CODA}.\footnote{Other software packages used are listed in the Reference section without being cited in-text.}  Convergence is assessed using the Gelman-Rubin Diagnostic procedure \citeauthor{r-superdiag}'s \textit{Superdiag} package in R \citep{Gelman1992,R}.
+Each model was run in R using Martyn \citeauthor{r-rjags}'s JAGS and CODA packages for convergence diagnostics \cite{R,r-CODA,r-rjags}.\footnote{Other software packages used are listed in the Reference section without being cited in-text.}  Convergence is assessed using the Gelman-Rubin Diagnostic procedure \citeauthor{r-superdiag}'s \textit{Superdiag} package in R \citep{Gelman1992,R}.
 
 %Software Citations
 \nocite{R,r-CODA,r-Foreign,r-R2jags,r-ggplot2,r-dplyr,r-rjagsr-doParallel,r-rcurl,r-random,r-superdiag,r-polycor}
@@ -52,7 +52,7 @@ The second model specification consists of the four original indicators, but is 
 \includegraphics[width=0.7\linewidth]{graphics/regime/regime_additive_ggplot}
 \end{figure}
 
-Figure \ref{fig:regime_additive_ggplot} shows the results of an additive scale for the relevant indicators in the Regime Change specification plotted against the IRT model.  The Pearson's Correlation between the additive model and the IRT model is $-.899$, with a $p$-value of $>.001$.
+Figure \ref{fig:regime_additive_ggplot.pdf} shows the results of an additive scale for the relevant indicators in the Regime Change specification plotted against the IRT model.  The Pearson's Correlation between the additive model and the IRT model is $-.899$, with a $p$-value of $>.001$.
 
 \begin{figure}
 	\centering	\caption{Regime Change Specification- Parameter Means}\label{regime_parametermean}

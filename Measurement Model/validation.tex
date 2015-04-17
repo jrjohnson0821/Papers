@@ -11,6 +11,21 @@ As shown with the evidence above, this measurement model uses indicators that ha
 \subsection{Convergent Validity -- Ginsburg and Melton Replication}
 As a test of convergent validity, I have replicated the additive measure discussed above from \citet{Melton2014}.  \citet{Melton2014} gathered data from the Comparative Constitutions Project (CCP) to code indicators of \textit{de jure} judicial independence using the text of national constitutions.  I replicated their project and applied it to the American states by using the texts of state constitutions gathered from the NBER/Maryland State Constitutions Project (SCP) \citep{Wallisnber}.\footnote{The SCP did not have text for all current state constitutions, for the states that were unavailable, the official texts were downloaded from the state government website \citep{Wallisnber}.}  Of the many variables available in the CCP, \citet{Melton2014} used five questions to code an additive index of \textit{de jure} judicial independence.  The five questions consisted of: a statement of judicial independence, lifetime terms, selection procedures, removal procedures, removal conditions, and salary insulation.  The questions used by CCP are available in Appendix \ref{CCPCode}.  This data is coded using exclusively the text of the constitutions in question, as such, my replication has followed the same procedures.
 
-The index created by \citet{Melton2014} was correlated with both the five indicator model and the additive index with my scaling using Polychloric Correlation \citep{Olsson1979}.\footnote{Correlation was also calculated using Pearson's $R$ and Kendall's Tau $B$ and were not significantly different.}  The data use for these calculations are located in Appendix \ref{GMData}.  The polychloric correlation coefficient for the \citeauthor{Melton2014} index and the five indicator model is XXXX.\todo{Put a real number here}  
+% latex table generated in R 3.1.2 by xtable 1.7-4 package
+% Fri Apr 17 11:58:40 2015
+\begin{table}[ht]
+	\centering\caption{Correlation of Measures}\label{Correlation}
+	\begin{tabular}{rccc}
+		\hline
+		& Additive & IRT & \citeauthor{Melton2014} \\ 
+		\hline
+		Additive & -- & $-.95^{***}$ &$-0.45^{**}$ \\ 
+		IRT & $-0.95^{***}$ & -- & $0.52^{***}$ \\ 
+		\citeauthor{Melton2014} & $-0.45^{**}$  &  $0.52^{***}$ & --\\ 
+		\hline
+	\end{tabular}
+\end{table}
+
+The index created by \citet{Melton2014} was correlated with both the five indicator model and the additive index with my scaling using Polychloric Correlation \citep{Olsson1979}.\footnote{Correlation was also calculated using Pearson's $R$ and Kendall's Tau $B$ and were not significantly different.}  The data use for these calculations are located in Appendix \ref{GMData}.  Table \ref{Correlation} shows these correlations.  All are statistically significant, however, they are not overwhelmingly 
 	
 \end{document}
