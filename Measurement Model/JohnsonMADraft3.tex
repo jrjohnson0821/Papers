@@ -24,7 +24,6 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,positioning}
 \usepackage{amsmath}
-\usetikzlibrary{arrows}
 \usepackage{caption, subcaption}
 \usepackage{subfiles}
 %setup hyperlinks color
@@ -419,4 +418,22 @@ If $\theta$, (\textit{de jure} judicial independence), was able to be observed, 
 		Missouri	&	6	&	0.663536048	&	3	&	Wyoming	&	8	&	0.152640428	&	4	\\	\hline
 	\end{tabular}
 \end{table}	
+
+\section{Correlation for Indicators}\label{CorrInd}
+% latex table generated in R 3.1.2 by xtable 1.7-4 package
+% Fri Apr 17 16:29:35 2015
+\begin{table}[ht]
+	\centering\caption{Correlation of Indicators}\label{indicatorcorr}
+	\begin{tabular}{rcccc}
+		\hline
+		& APPT & TERM1 & TERM2 & RETELE \\ 
+		\hline
+		APPT & -- & $0.28^{***}$ & $0.41^{***}$ & $0.81^{***}$\\ 
+		TERM1 &  $0.28^{***}$ & -- & $0.86^{***}$ & $0.42^{***}$ \\ 
+		TERM2 &  $0.41^{***}$ &  $0.86^{***}$ & -- & $0.49^{***}$ \\ 
+		RETELE &  $0.81^{***}$ &  $0.42^{***}$ &  $0.49^{***}$ & -- \\ 
+		\hline
+		\textit{Note:}  & \multicolumn{4}{l}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+	\end{tabular}
+\end{table}
 \end{document}

@@ -42,6 +42,14 @@ The Five Indicator specification of this model is composed of all state year obs
 
 Figure \ref{fig:fiveind_additive_ggplot} shows the results of an additive scale for the relevant indicators and data in the alternative specification.  The Pearson's Correlation between the additive and the IRT model is $-.9553$ \todo{Update this with new value} with a $p$-value of $<.001$.
 
+\begin{figure}
+\centering\caption{\textit{De Jure} Judicial Independence Over time}
+\label{fig:fiveind_timeplot}
+\includegraphics[scale=.8]{graphics/fiveind/fiveind_timeplot}
+\end{figure}
+
+Figure \ref{fig:fiveind_timeplot} shows the results of the posterior estimates over the time period in the sample.  Due to the short time period in the sample, there is little variance in the posterior estimates.  However, there is variance between the indicators, which allows for the model to converge.  The Regime Change Specification was run using 100,000 draws with the first 25,000 thrown away as burnin.  Convergence was assessed with a Gelman-Rubin Diagnostic, with a Multivariate Potential Scale Reduction Factor of \todo{Put a Number here for MPSF} \citep{Gelman1992}.  
+
 \subsection{Regime Change Specification}
 The second model specification consists of the four original indicators, but is limited to only unique observations of each judicial institution rather than repeated observations over long periods of time.  This specification dramatically reduces the number of observations.  For instance, Massachusetts, which has maintained the same selection/retention methods as well as the same term lengths for its entire history has only a single observation.  There are 155 state-year observations in this model specification.  The Regime Change Specification was run using 10,000 draws with the first 5,000 thrown away as burnin.  Convergence was assessed with a Gelman-Rubin Diagnostic, with a Multivariate Potential Scale Reduction Factor of 1.04 \citep{Gelman1992}.  
 
