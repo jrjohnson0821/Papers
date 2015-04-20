@@ -1,0 +1,148 @@
+%%%%% Preamble %%%%%
+\documentclass[compress]{beamer} 
+\usetheme{Madrid} 
+\useoutertheme[subsection=false]{smoothbars} 
+\useinnertheme{circles}
+%%%%% Load Packages %%%%%
+\usepackage{pgf}
+\usepackage{endnotes}
+\usepackage{natbib}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty}
+%%%%% Define Colors %%%%%
+\definecolor{COLOR01}{RGB}{0,0,153} %PSUblue
+\definecolor{COLOR02}{RGB}{204,204,204} %grey80
+%%%%% Set Colors %%%%% 
+\setbeamercolor*{normal text}{fg=black,bg=white}
+\setbeamercolor*{alerted text}{fg=navy}
+\setbeamercolor*{example text}{fg=black}
+\setbeamercolor*{structure}{fg=COLOR01, bg=white}
+\setbeamercolor*{palette primary}{fg=white,bg=COLOR01}
+\setbeamercolor*{palette secondary}{fg=black,bg= COLOR02}
+\setbeamercolor*{palette tertiary}{fg=white,bg=COLOR01}
+\setbeamercolor*{palette quaternary}{fg=white,bg=COLOR01}
+\setbeamercolor{titlelike}{fg=black, bg=COLOR02}
+\setbeamercolor{frametitle}{fg=white, bg=COLOR01}
+\setbeamercolor{frametitle right}{fg=white, bg=COLOR01}
+\setbeamercolor{sidebar}{bg= COLOR01}
+\setbeamercolor*{palette sidebar primary}{fg=white,bg=COLOR01}
+\setbeamercolor*{palette sidebar secondary}{fg=white,bg=COLOR01}
+\setbeamercolor*{palette sidebar tertiary}{fg=white,bg=COLOR01}
+\setbeamercolor*{palette sidebar quaternary}{fg=white,bg=COLOR01}
+\setbeamercolor*{item projected}{fg=black,bg=black!20}
+\setbeamercolor{block title}{fg=black,bg=COLOR02}
+\setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+\setbeamercolor{block title example}{use=example text,fg=white,bg=example text.fg!75!black}
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!15!bg}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=block title alerted.bg!15!bg}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg!15!bg}
+\definecolor{grey50}{RGB}{127,127,127} 
+\definecolor{grey30}{RGB}{77,77,77} 
+\definecolor{navy}{RGB}{0,0,128} 
+\usepackage{environ}% Requinavy for \NewEnviron, i.e. to read the whole body of the environment
+\makeatletter
+\newcounter{acolumn}%  Number of current column
+\newlength{\acolumnmaxheight}%   Maximum column height
+% `column` replacement to measure height
+\newenvironment{@acolumn}[1]{%
+    \stepcounter{acolumn}%
+    \begin{lrbox}{\@tempboxa}%
+    \begin{minipage}{#1}%
+}{%
+    \end{minipage}
+    \end{lrbox}
+    \@tempdimc=\dimexpr\ht\@tempboxa+\dp\@tempboxa\relax
+    % Save height of this column:
+    \expandafter\xdef\csname acolumn@height@\roman{acolumn}\endcsname{\the\@tempdimc}%
+    % Save maximum height
+    \ifdim\@tempdimc>\acolumnmaxheight
+        \global\acolumnmaxheight=\@tempdimc
+    \fi
+}
+
+% `column` wrapper which sets the height beforehand
+\newenvironment{@@acolumn}[1]{%
+    \stepcounter{acolumn}%
+    % The \autoheight macro contains a \vspace macro with the maximum height minus the natural column height
+    \edef\autoheight{\noexpand\vspace*{\dimexpr\acolumnmaxheight-\csname acolumn@height@\roman{acolumn}\endcsname\relax}}%
+    % Call original `column`:
+    \orig@column{#1}%
+}{%
+    \endorig@column
+}
+
+% Save orignal `column` environment away
+\let\orig@column\column
+\let\endorig@column\endcolumn
+
+% `columns` variant with automatic height adjustment
+\NewEnviron{acolumns}[1][]{%
+    % Init vars:
+    \setcounter{acolumn}{0}%
+    \setlength{\acolumnmaxheight}{0pt}%
+    \def\autoheight{\vspace*{0pt}}%
+    % Set `column` environment to special measuring environment
+    \let\column\@acolumn
+    \let\endcolumn\end@acolumn
+    \BODY% measure heights
+    % Reset counter for second processing round
+    \setcounter{acolumn}{0}%
+    % Set `column` environment to wrapper
+    \let\column\@@acolumn
+    \let\endcolumn\end@@acolumn
+    % Finally process columns now for real
+    \begin{columns}[#1]%
+        \BODY
+    \end{columns}%
+}
+\makeatother
+%DO NOT DELETE ANYTHING BEFORE THIS LINE RIGHT HERE % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%EVERYTHING ABOVE HERE IS IMPORTANT AND WILL FUCK UP YOUR SLIDESHOW IF YOU DELETE IT % % % % % % % % % % % %
+\title[Measuring Judicial Independence]{{\large Measuring Judicial Independence in the American States:}}
+\subtitle{A Latent Variable Approach}
+
+\author{Jeremy R. Johnson}
+\institute[PSU]{The Pennylvania State University
+
+\medskip
+\textit{Jeremy.Johnson@PSU.edu}
+}
+\date{April 23, 2015} %Compile This on the Day of the Presentation % % % % % % % % % % % %
+
+\begin{document}
+% % % % % % % % % % % % % % % % % % % % % % %
+\begin{frame}
+\setbeamertemplate{headline}{}
+\titlepage
+\end{frame}
+% % % % % % % % % % % % % % % % % % % % % %
+
+\begin{frame}{The Judicial Independence Continuum}
+\section{Theory}
+\only{`` Judicial independence is merely the other side of the coin from judicial accountability'' -- \citep{Burbank2008}}<1>
+
+	\only{\begin{figure}[tb]\centering\caption*{\textbf{Judicial Independence Continuum}}\label{IndCon}
+		\begin{tikzpicture}
+		% a straight line segment
+		\draw[latex-latex] (-0.5,0) -- (9.5,0);
+		%% the labels
+		\node[fill=black,draw=black,circle,inner sep=2pt,label=above:{\scriptsize Independent}] at (9,0) {};
+		\node[fill=black,draw=black,circle,inner sep=2pt,label=above:{\scriptsize Accountable}] at (0,0) {};
+		\end{tikzpicture}
+	\end{figure}}<2>
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\bibliographystyle{apsr}
+\bibliography{measurementbib}
+\end{document}
