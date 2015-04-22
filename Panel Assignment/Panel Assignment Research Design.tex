@@ -14,6 +14,7 @@
 \usepackage{hyperref}
 \usepackage[affil-it]{authblk}
 \usepackage{color}
+\usepackage{todonotes}
 
 %setup hyperlinks color
 \definecolor{PSU}{RGB}{0,0,153}
@@ -25,7 +26,7 @@
 	urlcolor=PSU           % color of external links
 }
 
-\title{Reassessing Random Assignment on the U.S. Courts of Appeals\footnote{This paper is part of a larger project for which a grant was received from The Pennsylvania State University Department of Political Science.  All errors and omissions are the responsibility of the reader for not understanding what I wrote.} }
+\title{Reassessing Random Assignment on the U.S. Courts of Appeals\footnote{This paper is part of a larger project for which a grant was received from The Pennsylvania State University Department of Political Science.  All errors and omissions are the responsibility of the reader for not understanding what I wrote.  All data and code for replication can be found at \url{URL} } }
 
 \author{\href{http://www.jeremyrjohnson.org/}{Jeremy R.\ Johnson}\\ \href{mailto:Jeremy.Johnson@psu.edu}{Jeremy.Johnson@psu.edu}}
 \affil{Pennsylvania State University}
@@ -67,10 +68,16 @@ Some BS about my Theory
 Some BS Hypotheses.
 
 \section{Data}\label{Data}
-The data for this project will come from the Songer Court of Appeals Database for the case data \citep{Songer2007}. The data for the individual judge level variables will come from the Federal Judicial Center biographical database with supplemental information coming from the U.S. Court of Appeals Judge Attribute Database \citep{FJC}. Measures of case salience are already coded into the \citeauthor{Songer2007} Dataset which reduces any additional coding, using the method developed by \cite{Hettinger2003}.
+The data for this project will come from the Songer Court of Appeals Database for the case data \citep{Songer2007}.\footnote{All data and documentation for this dataset can be found at \url{http://artsandsciences.sc.edu/poli/juri/appct.htm}}  This dataset is uniquely suited to examine the effects of random assignment of judges.  While the stratification of this data presents an interesting methodological challenge, it cannot be overcome.  This dataset takes all Court of Appeals cases decided since 1925 and randomly selects either 15 or 30 cases to fully code \citep{hurwitz2006institutional,hurtwitz2012changes}.  This provides approximately 25,000 observations of cases in a random sample.   
+
+The data for the individual judge level variables will come from the Federal Judicial Center biographical database with supplemental information coming from the U.S. Court of Appeals Judge Attribute Database \citep{FJC}. Measures of case salience are already coded into the \citeauthor{Songer2007} Dataset which reduces any additional coding, using the method developed by \cite{Hettinger2003}.  As noted above, case salience is likely to be an important factor in determining panel assignment.
 
 \section{Methodology}\label{Methods}
-The analysis of this data will proceed in two phases. The first phase will be to create a simulated dataset of panel assignment probabilities. This will consist of creating a set of available judges for each circuit/year. This can be compared to the caseload statistics available to establish a baseline. The \citeauthor{Songer2007} database is a stratified sample of all Court of Appeals cases from 1925-2002, which is approximately 20,000 case observations. The simulation will establish a baseline of panel and case assignment probability which will show how under or over represented a judge is on the panels. I will then apply a hierarchical generalized linear model with various judge level and circuit level effects.
+The analysis of this data will proceed in two phases. The first phase will be to create a simulated dataset of panel assignment probabilities. This will consist of creating a set of available judges for each circuit/year. 
+
+This can be compared to the caseload statistics available to establish a baseline. The simulation will establish a baseline of panel and case assignment probability which will show how under or over represented a judge is on the panels. 
+
+I will then apply a hierarchical generalized linear model with various judge level and circuit level effects.
 
 \section{Further Research}\label{Further Research}
 Some other BS about how I'm going to do this and get a great publication out of it. If this isn't on page ten you're fucked.
