@@ -25,7 +25,7 @@
 	urlcolor=PSU           % color of external links
 }
 
-\title{Reassessing Random Assignment on the U.S. Courts of Appeals}
+\title{Reassessing Random Assignment on the U.S. Courts of Appeals\footnote{This paper is part of a larger project for which a grant was received from The Pennsylvania State University Department of Political Science.  All errors and omissions are the responsibility of the reader for not understanding what I wrote.} }
 
 \author{\href{http://www.jeremyrjohnson.org/}{Jeremy R.\ Johnson}\\ \href{mailto:Jeremy.Johnson@psu.edu}{Jeremy.Johnson@psu.edu}}
 \affil{Pennsylvania State University}
@@ -35,17 +35,45 @@
 
 
 \begin{document}
-\maketitle
-\thispagestyle{empty}
+\clearpage\maketitle\thispagestyle{empty}
 
-\doublespacing
-\setcounter{page}{1}
-%\pagenumbering{gobble}  %This turns off page numbers  
 
 \begin{abstract}
 	\medskip
 	This is a test of the emergency abstract placeholder system.  If this had been an actual abstract, it would have briefly summarized the main points of the paper, so that a casual reader could quickly understand what the paper is about.  A high-quality abstract may also entice that person to read the entire paper, and possibly even to think about its contents.  This has been a test of the emergency abstract placeholder system. \\
 \end{abstract}
+
+\clearpage
+\setcounter{page}{1}
+\setcounter{footnote}{0}
+\renewcommand*{\thefootnote}{\arabic{footnote}}
+\addtolength{\footnotesep}{6pt}
+
+\section*{Introduction}
+It has been long argued that federal judges are not unbiased, but are swayed by their political and ideological leanings \citep{segal2002supreme}.  However, the United States federal judiciary is considered to be one of the most independent of all countries \citep{Linzer2014}.  One of the hallmarks of that system is that judges in both the trial and appellate level are randomly assigned.  This prevents both litigants and judges from improperly swaying a judicial proceeding.  This random assignment of judges is taken as a normative truth.  However, recently studies have disputed this finding \citep{Chilton2014}.  I will expand on the finding by \citeauthor{Chilton2014} and seek to find a more robust explanation for panel assignment.
+
+The United States Circuit Courts of Appeal (COA) are some of the most important federal courts in the United States.  They are second only to the United States Supreme Court in their influence, and some would argue even more so.  The Supreme Court hears less than 150 cases a year, while the COA hear over 50,000 per year \citep{Caseloadstats}.  Precedents set by these courts are biding over wide geographic areas, and due to the low case acceptance rate by the Supreme Court are often the last word on federal cases.
+
+There are numerous consequences of a positive finding in this study.  The primary consequence is that a covert process for assigning appellate panels violates the normative theory of an independent, transparent judiciary.  A second normative consequence is that if panels are not randomly assigned, why doesn't the judiciary simply admit that is the case and publish the procedures for assigning appellate panels?  
+
+The third consequence of this lack of transparency is that if there is a non-random method of assigning panels, what is the purpose and biases related to this method?  One of the hallmarks of a democracy is that those in power are accountable to the citizens.  Typically judicial branches are considered a special case in which independence as opposed to accountability is desired.  However, this is premised on the fact that the judges are not corrupt.  If these judges are responding to some other influence, whether it is a desire to influence policy outcomes, or if they are receiving illegal compensations, whether in the form of promotions or payments, this would seriously bring in to question the equitably 
+
+This paper proceeds as follows: Section \ref{Theory} discusses both the practical and normative theories relating to panel assignment, including the possible indicators of corrupt acts, Section \ref{Hypotheses} discusses the hypotheses to be tested, Section \ref{Data} discusses the data that will be collected, Section \ref{Methods} discusses the methodology used to assess and test the hypotheses, and Section \ref{Further Research} concludes with a discussion of the research yet to be undertaken as well as the applications of this research.
+
+\section{Theory}\label{Theory}
+Some BS about my Theory
+
+\section{Hypotheses}\label{Hypotheses}
+Some BS Hypotheses.
+
+\section{Data}\label{Data}
+The data for this project will come from the Songer Court of Appeals Database for the case data \citep{Songer2007}. The data for the individual judge level variables will come from the Federal Judicial Center biographical database with supplemental information coming from the U.S. Court of Appeals Judge Attribute Database \citep{FJC}. Measures of case salience are already coded into the \citeauthor{Songer2007} Dataset which reduces any additional coding, using the method developed by \cite{Hettinger2003}.
+
+\section{Methodology}\label{Methods}
+The analysis of this data will proceed in two phases. The first phase will be to create a simulated dataset of panel assignment probabilities. This will consist of creating a set of available judges for each circuit/year. This can be compared to the caseload statistics available to establish a baseline. The \citeauthor{Songer2007} database is a stratified sample of all Court of Appeals cases from 1925-2002, which is approximately 20,000 case observations. The simulation will establish a baseline of panel and case assignment probability which will show how under or over represented a judge is on the panels. I will then apply a hierarchical generalized linear model with various judge level and circuit level effects.
+
+\section{Further Research}\label{Further Research}
+Some other BS about how I'm going to do this and get a great publication out of it. If this isn't on page ten you're fucked.
 
 
 \bibliographystyle{apsr}
