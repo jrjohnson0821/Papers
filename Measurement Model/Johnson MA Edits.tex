@@ -268,7 +268,7 @@ The second model specification is a regime change model, which includes only sta
 
 In addition to the data being non-existent, there was quite a bit of variance in the interpretation of docket control based on the individual states.  In many of these states, even if there was an ``appeal by right,'' some states interpreted this as mandatory jurisdiction, while others did not.  These discrepancies lead toward a more \textit{de facto} indicator than is being addressed in this paper.  With the standardized definitions used in the BJS and NCSC reports, it becomes useful to add this indicator in for a post-1970 model, but as shown below, the wider variance in selection/retention methods and term lengths, still make a study of a longer time span useful, despite the lack of jurisdictional control data.  
 
-\subsection*{Indicators}
+\subsection{Indicators}
 All of the indicators are ordinal variables, with 0 representing the most independent category and higher values moving towards least independent.  Appointment method is range from zero to four, which is the appointment method that is used for a judge's initial appointment.  Initial Term Length ranges from zero to four as well and represents the length of the judge's initial term.  Subsequent Term Length is coded in a similar manner as Initial Term Length and represents the length of the judge's subsequent terms after their first retention or reappointment. 
 
 %-------------------------------------------------------------
@@ -310,13 +310,13 @@ All of the indicators are ordinal variables, with 0 representing the most indepe
 
 There is one major difference between these two measures in that zero represents those states in which the judge is initially appointed to a lifetime term.\footnote{The only major time this is an issue is in New Jersey, in which judges are initially appointed to a seven year term and then reappointed to a lifetime term.  However, since New Jersey is represented with a seven year term initially, this is different than if they were initially appointed to a lifetime term and therefore their subsequent term is greater than ten years.}  In many states, these two terms are identical.  These differences primarily occur in merit selection states, which have one to three year initial terms followed by a retention election and then have longer terms after the first retention election.  Coding term lengths as ordinal rather than continuous allows for consistent interpretation across the models.  Retention Method ranges from zero to two and indicates the method of retention: zero indicates a simple reappointment procedure with no election.  One represents an uncontested retention election, most common under the merit selection system, but also used in states that utilize partisan or non-partisan election systems.  Two indicates a contested retention election, either partisan or non-partisan.  Docket Control represents the amount of discretion that a court has over its docket.  Zero is a completely discretionary docket, while two is no discretion.  A one indicates a mix of discretionary and mandatory appeals. Table \ref{Indicators} shows the coding for all levels of each indicator. 
 
-\section{Model}\label{Model}
+\subsection{Model}\label{Model}
 As \citet{Linzer2014} show, a  properly specified IRT model can be more informative than a simple additive index.  The most important benefit of using this type of model is that there is no assumption made about the space between the cut points of each level of indicator, and between the indicators themselves \citep{Jackman2008,Schnakenberg2014}.  This method also provides important tools in model specification and diagnostics that are lost when using an additive model.  Many of the potential indicators of \textit{de jure} judicial independence are dichotomous or nominal, having no ordering, and at best they are ordinal, as in the case of selection methods.  Only the length of tenure is clearly ordered in that longer terms indicate independence as opposed to shorter terms.  Other indicators such as selection, retention, and control of the docket, while theoretically grounded, do not easily lend themselves to additive models.  The details of the model used can be found in Appendix \ref{ModelApp}. 
 
 
 
 \section{Results}\label{Results}
-I have specified two different models.  A primary specification with five indicators and 42 years of data and a regime change specification consisting of regime change observations over 200 years with four indicators.
+I have specified two different models: a primary specification with five indicators and 42 years of data, and a regime change specification consisting of regime change observations over 200 years with four indicators.
 
 Each model was run in R using Martyn \citeauthor{r-rjags}'s JAGS and CODA packages for convergence diagnostics \citep{R,r-CODA,r-rjags}.\footnote{Other software packages used are listed in the Reference section without being cited in-text.}  Convergence is assessed using the Gelman-Rubin Diagnostic procedure using \citeauthor{r-superdiag}'s \textit{Superdiag} package in R \citep{Gelman1992,R}.
 
@@ -325,7 +325,7 @@ Each model was run in R using Martyn \citeauthor{r-rjags}'s JAGS and CODA packag
 
 Figure \ref{continuumresults} shows how the results from this model map on to the Independence Continuum discussed in Section \ref{Theory}
 
-\begin{figure}[tbh]\centering\caption{Independence Continuum}\label{continuumresults}
+\todo{Add poles with updated data} \begin{figure}[tbh]\centering\caption{Independence Continuum}\label{continuumresults}
 	\begin{tikzpicture}
 	% a straight line segment
 	\draw[latex-latex] (-0.5,0) -- (9.5,0);
@@ -342,14 +342,7 @@ Figure \ref{continuumresults} shows how the results from this model map on to th
 \end{figure}
 
 \subsection{Five Indicator Specification}
-\begin{figure}
-	\centering
-	\caption{Five Indicator Specification- Additive vs. IRT}
-	\label{fig:fiveind_additive_ggplot}
-	\includegraphics[width=0.7\linewidth]{graphics/fiveind/fiveind_additive_ggplot}
-\end{figure}
-
-The Five Indicator specification of this model is composed of all state year observations from 1970-2012.  Figure \ref{fig:fiveind_additive_ggplot} shows the results of an additive scale for the relevant indicators and data in this specification.  The Pearson's Correlation between the additive and the IRT model is $-.9553$ with a $p$-value of $<.001$.
+The five indicator specification of this model is composed of all state year observations from 1970-2012.  Figure \ref{fig:fiveind_additive_ggplot} shows the results of an additive scale for the relevant indicators and data in this specification.  
 
 \begin{figure}
 	\centering\caption{\textit{De Jure} Judicial Independence Over Time}
@@ -357,8 +350,14 @@ The Five Indicator specification of this model is composed of all state year obs
 	\includegraphics[scale=.8]{graphics/fiveind/fiveind_timeplot}
 \end{figure}
 
-Figure \ref{fig:fiveind_timeplot} shows the results of the posterior estimates over the time period in the sample.  Due to the short time period in the sample, there is little variance in the posterior estimates.  However, there is variance between the indicators, which allows for the model to converge.  The Regime Change Specification was run using 100,000 draws with the first 25,000 thrown away as burnin.  Convergence was assessed with a Gelman-Rubin Diagnostic, with a Multivariate Potential Scale Reduction Factor of 1.42 \citep{Gelman1992}.  Figure \ref{fig:meanavgtime} shows the mean for the whole sample by year.  Even during the short time period of this study, there has been a substantial change which has affected the sample mean.  This indicates that since 1970, while some states have moved toward more independent systems, many more states have moved toward more accountable systems.
+Figure \ref{fig:fiveind_timeplot} shows the results of the posterior estimates over the time period in the sample.  Due to the short time period in the sample, there is little variance in the posterior estimates.  However, there is variance between the indicators, which allows for the model to converge.  The Regime Change Specification was run using 100,000 draws with the first 25,000 thrown away as burn-in.  Convergence was assessed with a Gelman-Rubin Diagnostic, with a Multivariate Potential Scale Reduction Factor of 1.42 \citep{Gelman1992}.  Figure \ref{fig:meanavgtime} shows the mean for the whole sample by year.  Even during the short time period of this study, there has been a substantial change which has affected the sample mean.  This indicates that since 1970, while some states have moved toward more independent systems, many more states have moved toward more accountable systems.The Pearson's Correlation between the additive and the IRT model is $-.9553$\todo{Update with new values} with a $p$-value of $<.001$.
 
+\begin{figure}
+	\centering
+	\caption{Five Indicator Specification- Additive vs. IRT}
+	\label{fig:fiveind_additive_ggplot}
+	\includegraphics[width=0.7\linewidth]{graphics/fiveind/fiveind_additive_ggplot}
+\end{figure}
 
 \begin{figure}[!tbh]
 \centering
@@ -379,16 +378,7 @@ Figure \ref{fig:FiveBetaDiscrimination} shows the Beta Discrimination for the in
 
 
 \subsection{Regime Change Specification}
-The second model specification consists of the four original indicators, but is limited to only unique observations of each judicial institution rather than repeated observations over long periods of time.  As shown in Figure \ref{fig:FiveBetaDiscrimination}, the omitted indicator, docket control, does not have a large effect on this model, so it does not suffer too much from this lack of data.  This specification dramatically reduces the number of observations.  For instance, Massachusetts, which has maintained the same selection/retention methods as well as the same term lengths for its entire history has only a single observation.  There are 155 state-year observations in this model specification.  The Regime Change Specification was run using 10,000 draws with the first 5,000 thrown away as burnin.  Convergence was assessed with a Gelman-Rubin Diagnostic, with a Multivariate Potential Scale Reduction Factor of 1.04 \citep{Gelman1992}.  
-
-\begin{figure}
-	\centering
-	\caption{Regime Specification- Additive vs. IRT}
-	\label{fig:regime_additive_ggplot.pdf}
-	\includegraphics[width=0.7\linewidth]{graphics/regime/regime_additive_ggplot}
-\end{figure}
-
-Figure \ref{fig:regime_additive_ggplot.pdf} shows the results of an additive scale for the relevant indicators in the Regime Change specification plotted against the IRT model.  The Pearson's Correlation between the additive model and the IRT model is $-.899$, with a $p$-value of $\leq.001$.
+The second model specification consists of the four original indicators, but is limited to only unique observations of each judicial institution rather than repeated observations over long periods of time.  As shown in Figure \ref{fig:FiveBetaDiscrimination}, the omitted indicator, docket control, does not have a large effect on this model, so it does not suffer too much from this lack of data.  This specification dramatically reduces the number of observations.  For instance, Massachusetts, which has maintained the same selection/retention methods as well as the same term lengths for its entire history has only a single observation.  There are 155 state-year observations in this model specification.  The Regime Change specification was run using 10,000 draws with the first 5,000 thrown away as burn-in.  Convergence was assessed with a Gelman-Rubin Diagnostic, with a Multivariate Potential Scale Reduction Factor of 1.04 \citep{Gelman1992}.  
 
 \begin{figure}
 	\centering	\caption{Regime Change Specification- Parameter Means}\label{regime_parametermean}
@@ -402,8 +392,17 @@ Figure \ref{fig:regime_additive_ggplot.pdf} shows the results of an additive sca
 	\end{subfigure}
 \end{figure}
 
+Figure \ref{fig:regime_additive_ggplot.pdf} shows the results of an additive scale for the relevant indicators in the Regime Change specification plotted against the IRT model.  The Pearson's Correlation between the additive model and the IRT model is \todo{Update with new values}$-.899$, with a $p$-value of $\leq.001$.
+
+\begin{figure}
+	\centering
+	\caption{Regime Specification- Additive vs. IRT}
+	\label{fig:regime_additive_ggplot.pdf}
+	\includegraphics[width=0.7\linewidth]{graphics/regime/regime_additive_ggplot}
+\end{figure}
+
 \section{Validation}\label{Validation}
-\subsection{Facial Validity}
+\subsection{Face Validity}
 As shown with the evidence above, this measurement model uses indicators that have been shown through previous literature to indicate judicial independence. In addition, these are all indicators that are institutional in nature, rather than measuring some concept that would measure both \textit{de facto} and \textit{de jure} independence. Rather than measuring the amount of docket control that a court exercises, I examine the control that is constitutionally or statutorily authorized to the court.
 
 %Ginsburg and Melton Replication
@@ -426,10 +425,10 @@ As a test of convergent validity, I have replicated the additive measure discuss
 	\end{tabular}
 \end{table}
 
-The index created by \citet{Melton2014} was correlated with both the five indicator model and my additive index using Polychloric Correlation \citep{Olsson1979}.\footnote{Correlation was also calculated using Pearson's $R$ and Kendall's Tau $B$ and were not significantly different.}  The data used for these calculations are located in Appendix \ref{GMData}.  Table \ref{Correlation} shows these correlations.  All are statistically significant, however, they are not overwhelmingly correlated.  
+The index created by \citet{Melton2014} was correlated with both the five indicator model and my additive index using Polychoric Correlation \citep{Olsson1979}.\footnote{Correlation was also calculated using Pearson's $R$ and Kendall's Tau $B$ and were not significantly different.}  The data used for these calculations are located in Appendix \ref{GMData}.  Table \ref{Correlation} shows these correlations.  All are statistically significant, however, they are not overwhelmingly correlated.  
 
 \subsection*{Discriminant Validity}
-To test for any other factors that could potentially be associated with the indicators used for this measure of judicial independence I correlate both the IRT measure and the additive measure with \citet{Enns2013}'s measure of mood.  The results are shown in Table \ref{EKCor}.  Divergent validity is contrasted with convergent validity in that it ensures that the measure in question does not measure things that it is not supposed to measure \citep{Campbell1959,Jackman2008}.  As shown in Table \ref{EKCor} this criteria is satisfied to a respectable degree.
+To test for any other factors that could potentially be associated with the indicators used for this measure of judicial independence I correlate both the IRT measure and the additive measure with Enns and Koch's \citeyearpar{Enns2013} state-measure of policy mood.  The results are shown in Table \ref{EKCor}.  Divergent validity is contrasted with convergent validity in that it ensures that the measure in question does not measure things that it is not supposed to measure \citep{Campbell1959,Jackman2008}.  As shown in Table \ref{EKCor} this criteria is satisfied to a respectable degree.
 
 % latex table generated in R 3.1.2 by xtable 1.7-4 package
 % Fri Apr 17 20:25:11 2015
@@ -449,9 +448,9 @@ To test for any other factors that could potentially be associated with the indi
 \end{table}
 
 \section{Application}\label{Application}
-There is a variety of ways in which this measurement model can be applied in future research.  For use outside of judicial politics, it provides a convenient means to include controls for judicial independence.  This can be applied in a comparative context and combined with \citet{Linzer2014}'s measure to show comparisons for both types of judicial independence.  This would be useful in comparative studies that do not strictly focus on the judiciary.  This can also be applied as a control in a variety of policy analyses.  For instance, the diffusion of same sex marriage laws and court rulings.  As noted in Section \ref{Indicators}, if a judge is fearful of electoral retribution, she may be more likely not to rule in favor of same sex marriage.  
+There is a variety of ways in which this measurement model can be applied in future research.  For use outside of judicial politics, it provides a convenient means to control for judicial independence in the study of state politics.  This can be applied in a comparative context and combined with \citet{Linzer2014}'s measure to show comparisons for both types of judicial independence.  This would be useful in comparative studies that do not strictly focus on the judiciary.  This can also be applied as a control in a variety of policy analyses.  For instance, the diffusion of same sex marriage laws and court rulings.  As noted in Section \ref{Indicators}, if a judge is fearful of electoral retribution, she may be more likely not to rule in favor of same sex marriage.  
 
-This measure can serve as the basis for further research into judicial independence from the standpoint of judicial institutions.  While there have been many past studies of \textit{de facto} judicial independence, there have been fewer studies of the institutions that allow that independence.  While the limitations of studying \textit{de jure} independence are that they cannot be directly linked to specific outcomes, such as in the case of human rights, there is evidence that the design of judicial institutions can provide insight into how effective independence or controls of a judiciary can be which can affect those outcomes \citep{Keith2002a,Keith2002b}.  
+This measure can serve as the basis for further research into judicial independence from the standpoint of judicial institutions.  While there have been many past studies of \textit{de facto} judicial independence, there have been fewer studies of the institutions that allow that independence.  While a limitation of studying \textit{de jure} independence is that it cannot be directly linked to specific outcomes, such as in the case of human rights, there is evidence that the design of judicial institutions can provide insight into how effective independence or controls of a judiciary can be which can affect those outcomes \citep{Keith2002a,Keith2002b}.  
 
 \section{Conclusion}
 Using a new dataset of constitutional features, I estimate a Bayesian Dynamic Ordinal latent variable model.  I illustrate how these various institutional structures can affect a state supreme court's level of \textit{de jure} judicial independence.  I also illustrate how these institutions have changed over time, both within states and throughout the whole country.  
@@ -460,6 +459,7 @@ While the short time period in the primary specification of the model would seem
 
 There are two avenues of research that should be explored subsequent to this paper.  The first is to establish a longer period of time in this model.  This could be easily accomplished with the correct amount of computing time.  The second extension of this research should be to expand this to a cross-national sample, which will allow for a greater variety of selection and retention methods.
 
+\newpage
 \singlespacing
 \bibliographystyle{apsr}
 \bibliography{measurementbib}
