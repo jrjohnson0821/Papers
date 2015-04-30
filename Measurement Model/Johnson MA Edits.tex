@@ -325,7 +325,7 @@ Each model was run in R using Martyn \citeauthor{r-rjags}'s JAGS and CODA packag
 
 Figure \ref{continuumresults} shows how the results from this model map on to the Independence Continuum discussed in Section \ref{Theory}
 
-\todo{Add poles with updated data} \begin{figure}[tbh]\centering\caption{Independence Continuum}\label{continuumresults}
+\begin{figure}[tbh]\centering\caption{Independence Continuum}\label{continuumresults}
 	\begin{tikzpicture}
 	% a straight line segment
 	\draw[latex-latex] (-0.5,0) -- (9.5,0);
@@ -350,7 +350,7 @@ The five indicator specification of this model is composed of all state year obs
 	\includegraphics[scale=.8]{graphics/fiveind/fiveind_timeplot}
 \end{figure}
 
-Figure \ref{fig:fiveind_timeplot} shows the results of the posterior estimates over the time period in the sample.  Due to the short time period in the sample, there is little variance in the posterior estimates.  However, there is variance between the indicators, which allows for the model to converge.  The Regime Change Specification was run using 100,000 draws with the first 25,000 thrown away as burn-in.  Convergence was assessed with a Gelman-Rubin Diagnostic, with a Multivariate Potential Scale Reduction Factor of 1.42 \citep{Gelman1992}.  Figure \ref{fig:meanavgtime} shows the mean for the whole sample by year.  Even during the short time period of this study, there has been a substantial change which has affected the sample mean.  This indicates that since 1970, while some states have moved toward more independent systems, many more states have moved toward more accountable systems.The Pearson's Correlation between the additive and the IRT model is $-.9553$\todo{Update with new values} with a $p$-value of $<.001$.
+Figure \ref{fig:fiveind_timeplot} shows the results of the posterior estimates over the time period in the sample.  Due to the short time period in the sample, there is little variance in the posterior estimates.  However, there is variance between the indicators, which allows for the model to converge.  The Regime Change Specification was run using 100,000 draws with the first 25,000 thrown away as burn-in.  Convergence was assessed with a Gelman-Rubin Diagnostic, with a Multivariate Potential Scale Reduction Factor of 1.42 \citep{Gelman1992}.  Figure \ref{fig:meanavgtime} shows the mean for the whole sample by year.  Even during the short time period of this study, there has been a substantial change which has affected the sample mean.  This indicates that since 1970, while some states have moved toward more independent systems, many more states have moved toward more accountable systems.The Pearson's Correlation between the additive and the IRT model is $-.9553$ with a $p$-value of $<.001$.
 
 \begin{figure}
 	\centering
@@ -364,17 +364,16 @@ Figure \ref{fig:fiveind_timeplot} shows the results of the posterior estimates o
 \caption{Average Judicial Independence Over Time}
 \label{fig:meanavgtime}
 \includegraphics[width=0.7\linewidth]{graphics/fiveind/meanavgtime}
-\end{figure}\todo{Unzoom Figure \ref{fig:meanavgtime}}
+\end{figure}
 
 Figure \ref{fig:FiveBetaDiscrimination} shows the Beta Discrimination for the indicators in the model.  The beta discrimination is an evaluation of the affect on the slope of each indicator.  The highest is for retention elections.  This fits nicely into the theory of \citet{Choi2010} that control of retention elections are key to determining the independence and subsequent actions of a judge on the bench.
 
-\begin{figure}[!tbh]
+\begin{figure}[tbh]
 \centering
 \caption{Beta Discrimination}
 \label{fig:FiveBetaDiscrimination}
 \includegraphics[width=0.7\linewidth]{graphics/fiveind/FiveBetaDiscrimination}
 \end{figure}
-
 
 
 \subsection{Regime Change Specification}
@@ -392,9 +391,9 @@ The second model specification consists of the four original indicators, but is 
 	\end{subfigure}
 \end{figure}
 
-Figure \ref{fig:regime_additive_ggplot.pdf} shows the results of an additive scale for the relevant indicators in the Regime Change specification plotted against the IRT model.  The Pearson's Correlation between the additive model and the IRT model is \todo{Update with new values}$-.899$, with a $p$-value of $\leq.001$.
+Figure \ref{fig:regime_additive_ggplot.pdf} shows the results of an additive scale for the relevant indicators in the Regime Change specification plotted against the IRT model.  The Pearson's Correlation between the additive model and the IRT model is $-.899$, with a $p$-value of $\leq.001$.
 
-\begin{figure}
+\begin{figure}[tbh]
 	\centering
 	\caption{Regime Specification- Additive vs. IRT}
 	\label{fig:regime_additive_ggplot.pdf}
@@ -448,12 +447,14 @@ To test for any other factors that could potentially be associated with the indi
 \end{table}
 
 \section{Application}\label{Application}
-There is a variety of ways in which this measurement model can be applied in future research.  For use outside of judicial politics, it provides a convenient means to control for judicial independence in the study of state politics.  This can be applied in a comparative context and combined with \citet{Linzer2014}'s measure to show comparisons for both types of judicial independence.  This would be useful in comparative studies that do not strictly focus on the judiciary.  This can also be applied as a control in a variety of policy analyses.  For instance, the diffusion of same sex marriage laws and court rulings.  As noted in Section \ref{Indicators}, if a judge is fearful of electoral retribution, she may be more likely not to rule in favor of same sex marriage.  
+%Policy Diffusion Model
+There is a variety of ways in which this measurement model can be applied in future research.  For use outside of judicial politics, it provides a convenient means to control for judicial independence in the study of state politics.  In a series of articles and books Gray and Lowery discuss the role of interest groups, lobbying, and money in state politics \citep{berkhout2011timing,gray2000population,lowery1995population}.  However, none of these articles make mention of the courts.  State courts are often integral players in campaign finance and lobbying reforms.  Some of the most important factors in a reforms chances of being found constitutional is the individual judge's disposition to campaign donations.  That disposition will be much more subject to change if the judge him or herself is forced to campaign, and is taking campaign donations from the same political action groups, groups, and lawyers that they are hearing cases against.
 
-This measure can serve as the basis for further research into judicial independence from the standpoint of judicial institutions.  While there have been many past studies of \textit{de facto} judicial independence, there have been fewer studies of the institutions that allow that independence.  While a limitation of studying \textit{de jure} independence is that it cannot be directly linked to specific outcomes, such as in the case of human rights, there is evidence that the design of judicial institutions can provide insight into how effective independence or controls of a judiciary can be which can affect those outcomes \citep{Keith2002a,Keith2002b}.  
+The influence of the judiciary has long been ignored in policy diffusion literature.  Despite this, in their article on the state of policy diffusion research \citeauthor{graham2013diffusion} neglect to examine the role of the judiciary on the diffusion of policies throughout the state \citep{graham2013diffusion}.  There has been a a considerable expansion of same-sex marriage legalization as well as bans on same sex marriage in the past decade.  Hundreds of judges, both federal and state, from district judges to Supreme Court justices have taken up this issue.  An overwhelming number of states have found bans on same sex marriage constitutional while a wave of federal district and appellate judges after the Supreme Court's ruling in \cite{windsor}.  What is the cause for the disparity between the state and federal judges? Certainly this isn't due to a mis-understanding of the Constitution between state and federal judges, or an entirely partisan issue.   
+
 
 \section{Conclusion}
-Using a new dataset of constitutional features, I estimate a Bayesian Dynamic Ordinal latent variable model.  I illustrate how these various institutional structures can affect a state supreme court's level of \textit{de jure} judicial independence.  I also illustrate how these institutions have changed over time, both within states and throughout the whole country.  
+Using a new dataset of constitutional features, I estimate a Bayesian Ordinal Item Response Theory model variable model measuring \textit{de jure} judicial independence.  I illustrate how these various institutional structures can affect a state supreme court's level of \textit{de jure} judicial independence.  I also illustrate how these institutions have changed over time, both within states and throughout the whole country.  
 
 While the short time period in the primary specification of the model would seem to indicate that judicial independence is a relatively static thing, the mean plot shows that it is significantly changing even over a short period of time. 
 
